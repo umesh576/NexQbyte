@@ -1,12 +1,3 @@
-// app/about/page.jsx
-// import AboutHero from "@/components/about/AboutHero";
-// import MissionVision from "@/components/about/MissionVision";
-// import LeadershipTeam from "@/components/about/LeadershipTeam";
-// import OurApproach from "@/components/about/OurApproach";
-// import StatsAchievements from "@/components/about/StatsAchievements";
-// import ClientTestimonials from "@/components/about/ClientTestimonials";
-// import PartnerBrands from "@/components/about/PartnerBrands";
-
 import AboutHero from "@/component/about/AboutHero";
 import ClientTestimonials from "@/component/about/ClientTestimonials";
 import LeadershipTeam from "@/component/about/LeadershipTeam";

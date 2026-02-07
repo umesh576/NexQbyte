@@ -1,18 +1,19 @@
 // components/about/LeadershipTeam.jsx
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { FaLinkedin, FaTwitter, FaEnvelope, FaStar } from "react-icons/fa";
 
 const leadershipData = [
   {
-    name: "Rajesh Thapa",
+    name: "Umesh Joshi",
     position: "Founder & CEO",
-    image: "/team/ceo.jpg",
+    image: "/umesh.jpg",
     bio: "Former Senior Architect at Microsoft with 15+ years in tech industry. Passionate about bridging the digital skills gap in Nepal.",
     education: "MSc Computer Science, Stanford University",
     experience: "15+ years in Tech Leadership",
-    linkedin: "https://linkedin.com/in/rajeshthapa",
-    email: "rajesh@nexqore.com",
+    linkedin: "https://www.linkedin.com/in/umesh-joshi-475b81304/",
+    email: "uj19343@gmail.com",
     achievements: [
       "Featured in Forbes 30 Under 30 Asia",
       "Speaker at TechCrunch Disrupt",
@@ -20,9 +21,9 @@ const leadershipData = [
     ],
   },
   {
-    name: "Samantha Chen",
-    position: "Co-Founder & CTO",
-    image: "/team/cto.jpg",
+    name: "Sugam Gurung",
+    position: "Co-Founder & Marketing Head",
+    image: "/sugam.jpeg",
     bio: "Ex-Google engineer with expertise in AI/ML and scalable systems. Leads our technical curriculum development.",
     education: "PhD AI, MIT",
     experience: "12+ years in AI Research",
@@ -35,8 +36,8 @@ const leadershipData = [
     ],
   },
   {
-    name: "Aarav Sharma",
-    position: "Director of Training",
+    name: "Nirajan Chaudhary",
+    position: "Managing Director",
     image: "/team/director.jpg",
     bio: "Industry veteran with 20+ years in corporate training. Designed our industry-aligned curriculum.",
     education: "MBA, Harvard Business School",
@@ -50,8 +51,38 @@ const leadershipData = [
     ],
   },
   {
-    name: "Priya Kapoor",
-    position: "Head of Business Solutions",
+    name: "Tilak Tamang",
+    position: "Senoir Development Lead",
+    image: "/team/head-business.jpg",
+    bio: "Digital transformation expert helping businesses adopt cutting-edge technologies.",
+    education: "MSc Digital Business, LBS",
+    experience: "10+ years in Consulting",
+    linkedin: "https://linkedin.com/in/priyakapoor",
+    email: "priya@nexqore.com",
+    achievements: [
+      "Led 100+ digital transformation projects",
+      "Keynote speaker at Digital Summit Asia",
+      "Board Member, Tech Entrepreneurs Association",
+    ],
+  },
+  {
+    name: "Roshan Budathoki",
+    position: "Digital Marketing Lead ",
+    image: "/team/head-business.jpg",
+    bio: "Digital transformation expert helping businesses adopt cutting-edge technologies.",
+    education: "MSc Digital Business, LBS",
+    experience: "10+ years in Consulting",
+    linkedin: "https://linkedin.com/in/priyakapoor",
+    email: "priya@nexqore.com",
+    achievements: [
+      "Led 100+ digital transformation projects",
+      "Keynote speaker at Digital Summit Asia",
+      "Board Member, Tech Entrepreneurs Association",
+    ],
+  },
+  {
+    name: "Sushank Chaudhary",
+    position: "Senior frontend Developer",
     image: "/team/head-business.jpg",
     bio: "Digital transformation expert helping businesses adopt cutting-edge technologies.",
     education: "MSc Digital Business, LBS",
@@ -91,8 +122,16 @@ const LeadershipTeam = () => {
               <div className="p-6">
                 <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-100">
                   {/* Placeholder for image */}
-                  <div className="w-full h-full bg-linear-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-4xl font-bold">
-                    {leader.name.charAt(0)}
+
+                  <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-100">
+                    <Image
+                      src={leader.image}
+                      alt={`${leader.name}'s profile`}
+                      width={128}
+                      height={128}
+                      className="object-cover w-full h-full"
+                      priority={false}
+                    />
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-center text-gray-800 mb-2">

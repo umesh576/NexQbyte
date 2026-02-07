@@ -132,7 +132,7 @@ const ServicesCategories = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white p-3 rounded-lg text-center"
+                  className="bg-white p-3 rounded-lg text-center text-black"
                 >
                   {item}
                 </div>
