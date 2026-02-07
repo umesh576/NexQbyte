@@ -15,51 +15,62 @@ const Header = () => {
     { name: "Connect Us", href: "/connection" },
   ];
 
+  // Add the missing countries array
+  const countries = [
+    { name: "USA", flag: "🇺🇸" },
+    { name: "UK", flag: "🇬🇧" },
+    { name: "CAN", flag: "🇨🇦" },
+    { name: "AUS", flag: "🇦🇺" },
+    { name: "GER", flag: "🇩🇪" },
+    { name: "JPN", flag: "🇯🇵" },
+    { name: "KOR", flag: "🇰🇷" },
+    { name: "SGP", flag: "🇸🇬" },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 bg-linear-to-r from-[#0a2463] to-[#1e3a8a] text-white shadow-lg">
-      {/* Top Bar */}
-      <div className="border-b border-blue-800 py-2 px-4">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+    <header className="sticky top-0 z-50 bg-linear-to-r from-[#0a2463] to-[#1e3a8a] text-white shadow-lg w-full">
+      {/* Top Bar - Fixed responsiveness issues */}
+      <div className="border-b border-blue-800 py-2 px-4 sm:px-6">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
           {/* Contact Info */}
-          <div className="flex flex-wrap items-center gap-4 text-sm mb-2 md:mb-0">
-            <div className="flex items-center gap-2">
-              <i className="fas fa-phone-alt text-blue-300"></i>
-              <span>+977 1-1234567</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 text-xs sm:text-sm">
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="text-blue-300">📞</span>
+              <span className="whitespace-nowrap">+977 1-1234567</span>
             </div>
-            <div className="flex items-center gap-2">
-              <i className="fas fa-envelope text-blue-300"></i>
-              <span>info@nexqore.com</span>
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="text-blue-300">✉️</span>
+              <span className="whitespace-nowrap">info@nexqore.com</span>
             </div>
-            <div className="flex items-center gap-2">
-              <i className="fas fa-map-marker-alt text-blue-300"></i>
-              <span>Kathmandu, Nepal</span>
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="text-blue-300">📍</span>
+              <span className="whitespace-nowrap">Kathmandu, Nepal</span>
             </div>
           </div>
 
-          {/* Country Flags */}
+          {/* Country Flags/Slogan */}
           <div className="hidden lg:flex items-center gap-2">
             <span className="text-xs text-blue-300 mr-2">We Serve:</span>
             <div className="flex gap-1">
-              <p>Skill, Growth, Experiences</p>
+              <p className="text-sm font-medium">Skill, Growth, Experiences</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Header */}
-      <div className="container mx-auto  py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center ">
+          {/* Logo - Fixed responsive sizing */}
+          <Link href="/" className="flex items-center">
             <div className="flex flex-col items-center">
-              {/* <div className="text-5xl font-bold tracking-wider text-white">
-                NexQore
-              </div> */}
               <Image
-                src={"/logo.jpg"}
-                width={200}
-                height={300}
+                src="/logo.jpg"
+                width={160}
+                height={80}
                 alt="logo nexQore"
+                className="w-30 h-auto sm:w-35 md:w-40 lg:w-45 object-contain"
+                priority
               />
             </div>
           </Link>
@@ -70,56 +81,63 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 hover:text-white transition-colors duration-200"
+                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-800 hover:text-white transition-colors duration-200 whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
-            <button className="ml-4 px-6 py-2 bg-white text-[#0a2463] font-semibold rounded-md hover:bg-blue-100 transition-colors duration-200">
+            <button className="ml-4 px-5 py-2 bg-white text-[#0a2463] font-semibold rounded-md hover:bg-blue-100 transition-colors duration-200 whitespace-nowrap">
               Apply Now
             </button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-2xl"
+            className="lg:hidden text-2xl p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
-            <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
+            {isMenuOpen ? "✕" : "☰"}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 animate-fadeIn">
+          <div className="lg:hidden mt-4 pb-4 animate-fadeIn bg-blue-900/50 backdrop-blur-sm rounded-lg p-4">
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-3 rounded-md hover:bg-blue-800 transition-colors duration-200 font-medium"
+                  className="px-4 py-3 rounded-md hover:bg-blue-800 transition-colors duration-200 font-medium text-center sm:text-left"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
+
+              {/* Countries Section - Fixed responsive grid */}
               <div className="pt-4 border-t border-blue-800">
-                <h4 className="text-blue-300 text-sm font-semibold mb-2">
+                <h4 className="text-blue-300 text-sm font-semibold mb-3 text-center sm:text-left">
                   Study Destinations:
                 </h4>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
                   {countries.map((country) => (
                     <div
                       key={country.name}
-                      className="flex flex-col items-center p-2 bg-blue-900 rounded hover:bg-blue-800"
+                      className="flex flex-col items-center p-2 bg-blue-900 rounded hover:bg-blue-800 cursor-pointer transition-colors duration-200"
                     >
-                      <span className="text-2xl">{country.flag}</span>
+                      <span className="text-xl sm:text-2xl">
+                        {country.flag}
+                      </span>
                       <span className="text-xs mt-1">{country.name}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <button className="mt-4 px-6 py-3 bg-white text-[#0a2463] font-semibold rounded-md hover:bg-blue-100 transition-colors duration-200">
+
+              {/* Apply Now Button */}
+              <button className="mt-4 px-6 py-3 bg-white text-[#0a2463] font-semibold rounded-md hover:bg-blue-100 transition-colors duration-200 w-full">
                 Apply Now
               </button>
             </div>
