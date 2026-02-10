@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Search,
   Filter,
@@ -11,8 +12,8 @@ import {
   Eye,
   RefreshCw,
   AlertCircle,
+  Plus,
 } from "lucide-react";
-import ContactCard from "./ContactCard";
 
 const ShowContent = () => {
   const [contacts, setContacts] = useState([]);
@@ -22,6 +23,7 @@ const ShowContent = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("all");
   const [refreshing, setRefreshing] = useState(false);
+  const router = useRouter();
 
   // Fetch contacts
   const fetchContacts = async () => {
@@ -94,9 +96,8 @@ const ShowContent = () => {
     ...new Set(contacts.map((contact) => contact.purpose).filter(Boolean)),
   ];
 
-  const handleRefresh = () => {
-    setRefreshing(true);
-    fetchContacts();
+  const handleAddUser = () => {
+    router.push("/admin/addUser");
   };
 
   const handleDelete = async (id) => {
@@ -168,21 +169,36 @@ const ShowContent = () => {
             </p>
           </div>
         </div>
-
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-gray-500">Total Contacts</p>
-                <p className="text-2xl font-bold text-gray-900">
-                  {contacts.length}
-                </p>
-              </div>
-              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                <User className="w-5 h-5 text-blue-600" />
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-8 gap-6">
+          {/* Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 flex-1">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow hover:shadow-md transition-shadow duration-200">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-500">Total Contacts</p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {contacts.length}
+                  </p>
+                </div>
+                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                  <User className="w-6 h-6 text-blue-600" />
+                </div>
               </div>
             </div>
+          </div>
+
+          {/* Add User Button */}
+          <div className="flex items-center">
+            <button
+              onClick={handleAddUser}
+              disabled={refreshing}
+              className="flex items-center gap-2 px-5 py-3 text-black bg-white border border-gray-300 rounded-lg hover:bg-gray-50 active:scale-95 transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Plus
+                className={`w-5 h-5 ${refreshing ? "animate-spin text-gray-500" : "text-black"}`}
+              />
+              Add New User
+            </button>
           </div>
         </div>
 
