@@ -12,10 +12,10 @@ const Unauthorization = () => {
           You do not have permission to access this page.
         </p>
         <Link
-          href="/"
+          href="/login"
           className="inline-block px-6 py-3 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition"
         >
-          Go to Home
+          Go to Login
         </Link>
       </div>
     </div>
