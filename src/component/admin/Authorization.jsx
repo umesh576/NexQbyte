@@ -36,12 +36,15 @@ const ShowContent = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact/allcontacts", {
-        headers: {
-          Authorization: `BEARER ${token}`,
-          "Content-Type": "application/json",
+      const res = await fetch(
+        "https://nex-qbyte-backend.vercel.app/api/contact/allcontacts",
+        {
+          headers: {
+            Authorization: `BEARER ${token}`,
+            "Content-Type": "application/json",
+          },
         },
-      });
+      );
 
       const data = await res.json();
 
@@ -107,7 +110,7 @@ const ShowContent = () => {
     const token = localStorage.getItem("token");
     try {
       const res = await fetch(
-        `http://localhost:5000/api/contact/deletecontact/${id}`,
+        `https://nex-qbyte-backend.vercel.app/api/contact/deletecontact/${id}`,
         {
           method: "DELETE",
           headers: {

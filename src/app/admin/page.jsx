@@ -17,11 +17,14 @@ const Page = () => {
       }
 
       try {
-        const res = await fetch("http://localhost:5000/api/auth/checkToken", {
-          headers: {
-            Authorization: `BEARER ${token}`,
+        const res = await fetch(
+          "https://nex-qbyte-backend.vercel.app/api/auth/checkToken",
+          {
+            headers: {
+              Authorization: `BEARER ${token}`,
+            },
           },
-        });
+        );
 
         if (!res.ok) {
           setAuthorized(false);

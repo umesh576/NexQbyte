@@ -25,14 +25,17 @@ const UserAddForm = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/user/create", {
-        method: "POST",
-        headers: {
-          Authorization: `BEARER ${token}`,
-          "Content-Type": "application/json",
+      const res = await fetch(
+        "https://nex-qbyte-backend.vercel.app/api/user/create",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `BEARER ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
         },
-        body: JSON.stringify(data),
-      });
+      );
 
       const result = await res.json();
 

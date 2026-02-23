@@ -14,7 +14,7 @@ const Contactform = () => {
   const onSubmit = async (data) => {
     console.log(data);
     const response = await fetch(
-      "http://localhost:5000/api/contact/addcontact",
+      "https://nex-qbyte-backend.vercel.app/api/contact/addcontact",
       {
         method: "POST",
         headers: {
