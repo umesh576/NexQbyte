@@ -53,7 +53,7 @@ const leadershipData = [
   {
     name: "Tilak Tamang",
     position: "Senoir Development Lead",
-    image: "/team/head-business.jpg",
+    image: "/tilak.jpeg",
     bio: "Digital transformation expert helping businesses adopt cutting-edge technologies.",
     education: "MSc Digital Business, LBS",
     experience: "10+ years in Consulting",

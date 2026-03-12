@@ -10,18 +10,18 @@ import {
   FaCheckCircle,
   FaLaptopCode,
   FaChartLine,
-  FaHotel,
-  FaGlassCheers,
-  FaGraduationCap,
-  FaBriefcase,
+  FaPalette,
+  FaRobot,
+  FaMobile,
+  FaGlobe,
 } from "react-icons/fa";
 
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [studentsTrained, setStudentsTrained] = useState(0);
-  const [coursesCount, setCoursesCount] = useState(0);
-  const [placementRate, setPlacementRate] = useState(0);
+  const [projectsCompleted, setProjectsCompleted] = useState(0);
+  const [clientsServed, setClientsServed] = useState(0);
+  const [teamMembers, setTeamMembers] = useState(0);
 
   // Statistics animation
   useEffect(() => {
@@ -40,9 +40,9 @@ const Hero = () => {
       return timer;
     };
 
-    const timer1 = animateCount(setStudentsTrained, 3200, 2500);
-    const timer2 = animateCount(setCoursesCount, 25, 1800);
-    const timer3 = animateCount(setPlacementRate, 85, 3000);
+    const timer1 = animateCount(setProjectsCompleted, 350, 2500);
+    const timer2 = animateCount(setClientsServed, 180, 1800);
+    const timer3 = animateCount(setTeamMembers, 25, 3000);
 
     return () => {
       clearInterval(timer1);
@@ -63,101 +63,51 @@ const Hero = () => {
     }
   };
 
-  // Training Programs Categories
-  const trainingCategories = [
+  // Featured Services
+  const featuredServices = [
     {
-      category: "IT & Technology",
-      icon: <FaLaptopCode className="text-blue-400 text-2xl" />,
-      programs: [
-        "Full Stack Development",
-        "Data Science",
-        "Cybersecurity",
-        "Cloud Computing",
-        "AI & ML",
-      ],
+      name: "Web Development",
+      duration: "Responsive",
+      icon: "🌐",
+      projects: "150+",
     },
     {
-      category: "Digital Marketing",
-      icon: <FaChartLine className="text-green-400 text-2xl" />,
-      programs: [
-        "SEO/SEM",
-        "Social Media Marketing",
-        "Content Marketing",
-        "Google Ads",
-        "Email Marketing",
-      ],
+      name: "Mobile App Dev",
+      duration: "iOS/Android",
+      icon: "📱",
+      projects: "85+",
     },
     {
-      category: "Hospitality Management",
-      icon: <FaHotel className="text-yellow-400 text-2xl" />,
-      programs: [
-        "Hotel Operations",
-        "Bartending",
-        "Bakery & Pastry",
-        "Culinary Arts",
-        "Event Management",
-      ],
-    },
-    {
-      category: "Business & Finance",
-      icon: <FaBriefcase className="text-purple-400 text-2xl" />,
-      programs: [
-        "Share Market Trading",
-        "Business Management",
-        "Entrepreneurship",
-        "Accounting",
-        "Sales Training",
-      ],
-    },
-  ];
-
-  // Featured Training Programs
-  const featuredPrograms = [
-    {
-      name: "Full Stack Development",
-      duration: "6 Months",
-      icon: "💻",
-      placement: "95%",
-    },
-    {
-      name: "Digital Marketing Pro",
-      duration: "4 Months",
+      name: "Digital Marketing",
+      duration: "360° Solutions",
       icon: "📈",
-      placement: "90%",
+      projects: "200+",
     },
     {
-      name: "Professional Bartending",
-      duration: "3 Months",
-      icon: "🍸",
-      placement: "88%",
+      name: "Graphics Design",
+      duration: "Creative",
+      icon: "🎨",
+      projects: "300+",
     },
     {
-      name: "Share Market Mastery",
-      duration: "3 Months",
-      icon: "📊",
-      placement: "92%",
+      name: "AI Services",
+      duration: "ML/AI Solutions",
+      icon: "🤖",
+      projects: "45+",
     },
     {
-      name: "Hotel Management",
-      duration: "6 Months",
-      icon: "🏨",
-      placement: "85%",
-    },
-    {
-      name: "Data Science",
-      duration: "8 Months",
-      icon: "🔬",
-      placement: "94%",
+      name: "UI/UX Design",
+      duration: "User Centric",
+      icon: "✨",
+      projects: "120+",
     },
   ];
 
   const benefits = [
-    "Industry-Recognized Certifications",
-    "100% Practical Hands-on Training",
-    "Job Placement Assistance",
-    "Flexible Batch Timings",
-    "Industry Expert Trainers",
-    "Modern Infrastructure & Labs",
+    "10+ Satisfied Clients Worldwide",
+    "Expert Team of 15+ Developers",
+    "24/7 Technical Support",
+    "On-Time Project Delivery",
   ];
 
   return (
@@ -207,22 +157,19 @@ const Hero = () => {
             <div className="inline-flex items-center px-4 py-2 bg-blue-600/30 backdrop-blur-sm rounded-full mb-6 border border-blue-400/30">
               <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
               <span className="text-sm font-semibold">
-                Professional Skill Development Center
+                Digital Innovation Partner
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Master In-Demand
-              <span className="block text-blue-300 mt-2">
-                Skills for the Digital Age
-              </span>
+              <span className="block text-blue-300">Digital Solutions,</span>
+              <span className="block">Real Results</span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl leading-relaxed">
-              Astra Skill Academy transforms careers through cutting-edge
-              professional training in IT, Digital Marketing, Hospitality,
-              Business, and more. Our industry-aligned programs ensure youre
-              job-ready from day one.
+              Nexqbyte IT Solutions delivers world-class website development,
+              mobile applications, digital marketing, graphics design, and
+              AI-powered services. We turn your ideas into digital reality.
             </p>
 
             {/* Benefits Highlights */}
@@ -240,166 +187,112 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
-                href="/courses"
+                href="/services"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-600/30"
               >
-                View All Courses
+                Explore Our Services
                 <FaChevronRight className="ml-2" />
               </Link>
               <Link
-                href="/demo-class"
+                href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/30 transition-all duration-300 hover:scale-105"
               >
-                Book Free Demo Class
+                Get Free Consultation
               </Link>
             </div>
           </div>
 
-          {/* Right Content - Stats & Programs */}
+          {/* Right Content - Stats & Services */}
           <div className="space-y-8">
             {/* Statistics Cards */}
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 hover:bg-white/15 transition-all duration-300">
                 <div className="text-3xl font-bold text-white mb-1">
-                  {studentsTrained}+
+                  {projectsCompleted}+
                 </div>
-                <div className="text-sm text-blue-200">
-                  Professionals Trained
-                </div>
+                <div className="text-sm text-blue-200">Projects Completed</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 hover:bg-white/15 transition-all duration-300">
                 <div className="text-3xl font-bold text-white mb-1">
-                  {coursesCount}+
+                  {clientsServed}+
                 </div>
-                <div className="text-sm text-blue-200">Training Programs</div>
+                <div className="text-sm text-blue-200">Happy Clients</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 hover:bg-white/15 transition-all duration-300">
                 <div className="text-3xl font-bold text-white mb-1">
-                  {placementRate}%
+                  {teamMembers}+
                 </div>
-                <div className="text-sm text-blue-200">Placement Rate</div>
+                <div className="text-sm text-blue-200">Expert Team</div>
               </div>
             </div>
 
-            {/* Training Categories */}
-            <div className="bg-linear-to-br from-blue-900/40 to-blue-800/40 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-6 text-center">
-                Our Training Domains
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {trainingCategories.map((category) => (
-                  <div
-                    key={category.category}
-                    className="bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 cursor-pointer group"
-                  >
-                    <div className="flex items-center mb-3">
-                      {category.icon}
-                      <h4 className="ml-3 font-bold text-white">
-                        {category.category}
-                      </h4>
-                    </div>
-                    <ul className="space-y-1">
-                      {category.programs.map((program, idx) => (
-                        <li
-                          key={idx}
-                          className="text-xs text-gray-300 group-hover:text-white transition-colors"
-                        >
-                          • {program}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Featured Programs */}
+            {/* Featured Services */}
             <div className="bg-linear-to-br from-[#0a2463]/40 to-[#1e3a8a]/40 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
               <h3 className="text-xl font-bold text-white mb-6 text-center">
-                Top Rated Programs
+                Our Core Services
               </h3>
               <div className="grid grid-cols-3 gap-3">
-                {featuredPrograms.map((program) => (
+                {featuredServices.map((service) => (
                   <div
-                    key={program.name}
+                    key={service.name}
                     className="flex flex-col items-center p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 cursor-pointer"
                   >
-                    <div className="text-2xl mb-2">{program.icon}</div>
+                    <div className="text-2xl mb-2">{service.icon}</div>
                     <div className="text-xs font-medium text-white text-center mb-1">
-                      {program.name}
+                      {service.name}
                     </div>
                     <div className="text-xs text-blue-300">
-                      {program.duration}
+                      {service.duration}
                     </div>
                     <div className="text-xs text-green-400 mt-1">
-                      {program.placement} Placement
+                      {service.projects}
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Quick Enrollment Form */}
-            <div className="bg-linear-to-r from-blue-900/50 to-blue-800/50 backdrop-blur-sm rounded-xl p-5 border border-white/20">
-              <h4 className="text-lg font-bold text-white mb-3">
-                Start Your Training Journey
-              </h4>
-              <div className="space-y-3">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                />
-                <div className="flex gap-3">
-                  <select className="flex-1 px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-                    <option value="">Select Course Interest</option>
-                    <option value="it">IT & Technology</option>
-                    <option value="digital">Digital Marketing</option>
-                    <option value="hospitality">Hospitality</option>
-                    <option value="business">Business & Finance</option>
-                  </select>
-                  <button className="px-6 bg-white text-blue-900 hover:bg-blue-100 font-semibold py-2.5 rounded-lg transition-colors duration-300 text-sm whitespace-nowrap">
-                    Enroll Now
-                  </button>
-                </div>
-                <p className="text-xs text-gray-300 text-center">
-                  Get free career counseling session
-                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Trust Indicators */}
+        {/* Trust Indicators - Updated for IT Company */}
         <div className="mt-16 pt-8 border-t border-white/20">
           <h3 className="text-center text-xl font-bold text-white mb-8">
-            Trusted by Leading Companies for Talent
+            Trusted by Industry Leaders
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
-              { name: "Tech Companies", icon: "🏢", count: "50+" },
-              { name: "Hotels & Resorts", icon: "🏨", count: "30+" },
-              { name: "Marketing Agencies", icon: "📱", count: "40+" },
-              { name: "Financial Firms", icon: "💼", count: "25+" },
-              { name: "Restaurants", icon: "🍽️", count: "60+" },
-              { name: "Startups", icon: "🚀", count: "100+" },
-            ].map((company) => (
-              <div key={company.name} className="text-center">
-                <div className="text-3xl mb-2">{company.icon}</div>
-                <div className="text-white font-bold">{company.count}</div>
-                <div className="text-sm text-gray-300">{company.name}</div>
+              { name: "Tech Giants", icon: "💻", count: "15+" },
+              { name: "Startups", icon: "🚀", count: "50+" },
+              { name: "E-commerce", icon: "🛒", count: "30+" },
+              { name: "Healthcare", icon: "🏥", count: "20+" },
+              { name: "Banking", icon: "🏦", count: "12+" },
+              { name: "Education", icon: "📚", count: "25+" },
+            ].map((industry) => (
+              <div key={industry.name} className="text-center">
+                <div className="text-3xl mb-2">{industry.icon}</div>
+                <div className="text-white font-bold">{industry.count}</div>
+                <div className="text-sm text-gray-300">{industry.name}</div>
               </div>
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="flex flex-col items-center animate-bounce">
-          <span className="text-white/80 text-sm mb-2">Explore Programs</span>
-          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
-            <div className="w-1.5 h-3 bg-white rounded-full mt-2"></div>
+        {/* Technology Stack */}
+        <div className="mt-12 text-center">
+          <p className="text-sm text-blue-200 mb-3">
+            Powered by cutting-edge technologies
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {["React", "Node.js", "Python", "AWS", "MongoDB", "Figma"].map(
+              (tech) => (
+                <span
+                  key={tech}
+                  className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-xs text-white border border-white/20"
+                >
+                  {tech}
+                </span>
+              ),
+            )}
           </div>
         </div>
       </div>
