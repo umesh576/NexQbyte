@@ -69,13 +69,11 @@ const Hero = () => {
       name: "Web Development",
       duration: "Responsive",
       icon: "🌐",
-      projects: "150+",
     },
     {
       name: "Mobile App Dev",
       duration: "iOS/Android",
       icon: "📱",
-      projects: "85+",
     },
     {
       name: "Digital Marketing",
@@ -87,19 +85,16 @@ const Hero = () => {
       name: "Graphics Design",
       duration: "Creative",
       icon: "🎨",
-      projects: "300+",
     },
     {
       name: "AI Services",
       duration: "ML/AI Solutions",
       icon: "🤖",
-      projects: "45+",
     },
     {
       name: "UI/UX Design",
       duration: "User Centric",
       icon: "✨",
-      projects: "120+",
     },
   ];
 
@@ -194,7 +189,7 @@ const Hero = () => {
                 <FaChevronRight className="ml-2" />
               </Link>
               <Link
-                href="/contact"
+                href="/connection"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/30 transition-all duration-300 hover:scale-105"
               >
                 Get Free Consultation
@@ -244,9 +239,6 @@ const Hero = () => {
                     <div className="text-xs text-blue-300">
                       {service.duration}
                     </div>
-                    <div className="text-xs text-green-400 mt-1">
-                      {service.projects}
-                    </div>
                   </div>
                 ))}
               </div>
@@ -261,12 +253,12 @@ const Hero = () => {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
-              { name: "Tech Giants", icon: "💻", count: "15+" },
-              { name: "Startups", icon: "🚀", count: "50+" },
-              { name: "E-commerce", icon: "🛒", count: "30+" },
-              { name: "Healthcare", icon: "🏥", count: "20+" },
-              { name: "Banking", icon: "🏦", count: "12+" },
-              { name: "Education", icon: "📚", count: "25+" },
+              { name: "Startups", icon: "🚀", count: "5+" },
+              { name: "E-commerce", icon: "🛒", count: "1+" },
+              { name: "Healthcare", icon: "🏥", count: "2+" },
+              { name: "Education", icon: "📚", count: "2+" },
+              { name: "Hopitality", icon: "🏨", count: "2+" },
+              { name: "Fashion", icon: "👗", count: "1+" },
             ].map((industry) => (
               <div key={industry.name} className="text-center">
                 <div className="text-3xl mb-2">{industry.icon}</div>

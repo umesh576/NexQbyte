@@ -50,51 +50,6 @@ const leadershipData = [
       "Government Skill Development Advisor",
     ],
   },
-  {
-    name: "Tilak Tamang",
-    position: "Senoir Development Lead",
-    image: "/tilak.jpeg",
-    bio: "Digital transformation expert helping businesses adopt cutting-edge technologies.",
-    education: "MSc Digital Business, LBS",
-    experience: "10+ years in Consulting",
-    linkedin: "https://linkedin.com/in/priyakapoor",
-    email: "priya@nexqore.com",
-    achievements: [
-      "Led 100+ digital transformation projects",
-      "Keynote speaker at Digital Summit Asia",
-      "Board Member, Tech Entrepreneurs Association",
-    ],
-  },
-  {
-    name: "Roshan Budathoki",
-    position: "Digital Marketing Lead ",
-    image: "/team/head-business.jpg",
-    bio: "Digital transformation expert helping businesses adopt cutting-edge technologies.",
-    education: "MSc Digital Business, LBS",
-    experience: "10+ years in Consulting",
-    linkedin: "https://linkedin.com/in/priyakapoor",
-    email: "priya@nexqore.com",
-    achievements: [
-      "Led 100+ digital transformation projects",
-      "Keynote speaker at Digital Summit Asia",
-      "Board Member, Tech Entrepreneurs Association",
-    ],
-  },
-  {
-    name: "Sushank Chaudhary",
-    position: "Senior frontend Developer",
-    image: "/Shusank.jpeg",
-    bio: "Digital transformation expert helping businesses adopt cutting-edge technologies.",
-    education: "MSc Digital Business, LBS",
-    experience: "10+ years in Consulting",
-    linkedin: "https://www.linkedin.com/in/shusank-chaudhary-b2a239331/",
-    email: "chaudharyshusank49@gmail.com",
-    achievements: [
-      "Led 100+ digital transformation projects",
-      "Keynote speaker at Digital Summit Asia",
-      "Board Member, Tech Entrepreneurs Association",
-    ],
-  },
 ];
 
 const LeadershipTeam = () => {
@@ -112,7 +67,7 @@ const LeadershipTeam = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {leadershipData.map((leader, index) => (
             <div
               key={index}
@@ -279,7 +234,7 @@ const LeadershipTeam = () => {
         <div className="text-center mt-12">
           <p className="text-gray-600">
             Our leadership team brings together{" "}
-            <span className="font-semibold text-blue-600">75+ years</span> of
+            <span className="font-semibold text-blue-600">15+ years</span> of
             combined experience in technology, education, and business.
           </p>
         </div>

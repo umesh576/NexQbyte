@@ -3,49 +3,68 @@
 import { useState } from "react";
 import {
   FaLaptopCode,
+  FaMobileAlt,
+  FaPalette,
+  FaRobot,
   FaChartLine,
-  FaBriefcase,
-  FaBuilding,
-  FaUsers,
-  FaGraduationCap,
+  FaCloud,
+  FaShoppingCart,
+  FaSearch,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const ServicesCategories = () => {
-  const [activeCategory, setActiveCategory] = useState("it-training");
+  const [activeCategory, setActiveCategory] = useState("web-dev");
 
   const categories = [
     {
-      id: "it-training",
-      title: "IT & Technology Training",
+      id: "web-dev",
+      title: "Web Development",
       icon: <FaLaptopCode className="text-blue-500 text-2xl" />,
-      description: "Master in-demand tech skills with hands-on training",
+      description:
+        "Custom websites, web applications, and e-commerce solutions",
       color: "from-blue-500 to-blue-600",
-      count: 8,
-    },
-    {
-      id: "business-training",
-      title: "Business Skill Training",
-      icon: <FaChartLine className="text-green-500 text-2xl" />,
-      description: "Develop essential business and financial skills",
-      color: "from-green-500 to-green-600",
       count: 6,
     },
     {
-      id: "it-solutions",
-      title: "IT Company Services",
-      icon: <FaBuilding className="text-purple-500 text-2xl" />,
-      description: "Custom software and digital solutions for businesses",
-      color: "from-purple-500 to-purple-600",
+      id: "app-dev",
+      title: "App Development",
+      icon: <FaMobileAlt className="text-green-500 text-2xl" />,
+      description: "Native iOS, Android, and cross-platform mobile apps",
+      color: "from-green-500 to-green-600",
       count: 4,
     },
     {
-      id: "corporate",
-      title: "Corporate Training",
-      icon: <FaUsers className="text-orange-500 text-2xl" />,
-      description: "Team training and skill development for companies",
-      color: "from-orange-500 to-orange-600",
+      id: "graphics",
+      title: "Graphics Design",
+      icon: <FaPalette className="text-purple-500 text-2xl" />,
+      description: "Brand identity, UI/UX design, and creative visuals",
+      color: "from-purple-500 to-purple-600",
       count: 5,
+    },
+    {
+      id: "ai-services",
+      title: "AI & Automation",
+      icon: <FaRobot className="text-orange-500 text-2xl" />,
+      description: "Machine learning, AI solutions, and process automation",
+      color: "from-orange-500 to-orange-600",
+      count: 4,
+    },
+    {
+      id: "digital-marketing",
+      title: "Digital Marketing",
+      icon: <FaChartLine className="text-pink-500 text-2xl" />,
+      description: "SEO, social media, PPC, and content marketing",
+      color: "from-pink-500 to-pink-600",
+      count: 5,
+    },
+    {
+      id: "cloud",
+      title: "Cloud Solutions",
+      icon: <FaCloud className="text-cyan-500 text-2xl" />,
+      description: "Cloud migration, hosting, and infrastructure management",
+      color: "from-cyan-500 to-cyan-600",
+      count: 3,
     },
   ];
 
@@ -54,16 +73,15 @@ const ServicesCategories = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Our Service Categories
+            Our Digital Services
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Comprehensive solutions for individuals, professionals, and
-            businesses
+            End-to-end IT solutions for businesses of all sizes
           </p>
         </div>
 
         {/* Category Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {categories.map((category, index) => (
             <motion.div
               key={category.id}
@@ -119,76 +137,159 @@ const ServicesCategories = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {activeCategory === "it-training" &&
+            {activeCategory === "web-dev" &&
               [
-                "Full Stack Development",
-                "Cybersecurity",
-                "Data Science & AI",
-                "Cloud Computing",
-                "Mobile App Development",
-                "DevOps",
+                "Custom Website Development",
+                "E-commerce Solutions",
+                "CMS Development",
+                "Web Portals",
+                "Progressive Web Apps",
+                "API Integration",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-4 rounded-xl text-center hover:shadow-md transition-shadow border border-gray-100"
+                >
+                  <div className="text-2xl mb-2">🌐</div>
+                  <div className="font-medium text-gray-800">{item}</div>
+                  <div className="text-xs text-blue-600 mt-1">
+                    Starting at $500
+                  </div>
+                </div>
+              ))}
+
+            {activeCategory === "app-dev" &&
+              [
+                "iOS App Development",
+                "Android App Development",
+                "Cross-Platform Apps",
+                "App Maintenance",
+                "App Store Optimization",
+                "Enterprise Apps",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-4 rounded-xl text-center hover:shadow-md transition-shadow border border-gray-100"
+                >
+                  <div className="text-2xl mb-2">📱</div>
+                  <div className="font-medium text-gray-800">{item}</div>
+                  <div className="text-xs text-green-600 mt-1">
+                    Starting at $1000
+                  </div>
+                </div>
+              ))}
+
+            {activeCategory === "graphics" &&
+              [
+                "Logo & Brand Identity",
                 "UI/UX Design",
-                "IT Support",
+                "Social Media Graphics",
+                "Print Design",
+                "Motion Graphics",
+                "Packaging Design",
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white p-3 rounded-lg text-center text-black"
+                  className="bg-white p-4 rounded-xl text-center hover:shadow-md transition-shadow border border-gray-100"
                 >
-                  {item}
+                  <div className="text-2xl mb-2">🎨</div>
+                  <div className="font-medium text-gray-800">{item}</div>
+                  <div className="text-xs text-purple-600 mt-1">
+                    Starting at $200
+                  </div>
                 </div>
               ))}
 
-            {activeCategory === "business-training" &&
+            {activeCategory === "ai-services" &&
               [
-                "Digital Marketing",
-                "Share Market Trading",
-                "Business Analytics",
-                "Sales & Negotiation",
-                "Financial Management",
-                "Entrepreneurship",
+                "Machine Learning Models",
+                "Chatbot Development",
+                "Data Analytics",
+                "Process Automation",
+                "Computer Vision",
+                "Predictive Analytics",
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white p-3 rounded-lg text-center"
+                  className="bg-white p-4 rounded-xl text-center hover:shadow-md transition-shadow border border-gray-100"
                 >
-                  {item}
+                  <div className="text-2xl mb-2">🤖</div>
+                  <div className="font-medium text-gray-800">{item}</div>
+                  <div className="text-xs text-orange-600 mt-1">
+                    Custom Pricing
+                  </div>
                 </div>
               ))}
 
-            {activeCategory === "it-solutions" &&
+            {activeCategory === "digital-marketing" &&
               [
-                "Custom Software Development",
-                "Website Development",
-                "Mobile App Development",
-                "IT Consulting",
-                "Digital Marketing Solutions",
-                "Cloud Solutions",
+                "SEO Optimization",
+                "Social Media Marketing",
+                "PPC Campaigns",
+                "Content Marketing",
+                "Email Marketing",
+                "Analytics & Reporting",
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white p-3 rounded-lg text-center"
+                  className="bg-white p-4 rounded-xl text-center hover:shadow-md transition-shadow border border-gray-100"
                 >
-                  {item}
+                  <div className="text-2xl mb-2">📈</div>
+                  <div className="font-medium text-gray-800">{item}</div>
+                  <div className="text-xs text-pink-600 mt-1">
+                    Starting at $300/mo
+                  </div>
                 </div>
               ))}
 
-            {activeCategory === "corporate" &&
+            {activeCategory === "cloud" &&
               [
-                "Team Skill Development",
-                "IT Infrastructure Training",
-                "Leadership Programs",
-                "Digital Transformation",
-                "Compliance Training",
+                "Cloud Migration",
+                "AWS/Azure Services",
+                "Cloud Hosting",
+                "Infrastructure Management",
+                "DevOps Services",
+                "Backup & Security",
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white p-3 rounded-lg text-center"
+                  className="bg-white p-4 rounded-xl text-center hover:shadow-md transition-shadow border border-gray-100"
                 >
-                  {item}
+                  <div className="text-2xl mb-2">☁️</div>
+                  <div className="font-medium text-gray-800">{item}</div>
+                  <div className="text-xs text-cyan-600 mt-1">Custom Plans</div>
                 </div>
               ))}
           </div>
         </motion.div>
+
+        {/* Why Choose Us */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
+          {[
+            {
+              icon: "⚡",
+              title: "Fast Delivery",
+              desc: "On-time project completion",
+            },
+            {
+              icon: "🔒",
+              title: "Secure Code",
+              desc: "Best security practices",
+            },
+            {
+              icon: "💬",
+              title: "24/7 Support",
+              desc: "Round-the-clock assistance",
+            },
+            { icon: "📊", title: "Scalable", desc: "Grow with your business" },
+          ].map((item, idx) => (
+            <div key={idx} className="text-center p-4">
+              <div className="text-3xl mb-2">{item.icon}</div>
+              <h4 className="font-bold text-gray-800">{item.title}</h4>
+              <p className="text-sm text-gray-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

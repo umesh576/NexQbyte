@@ -41,58 +41,27 @@ const PartnerBrands = () => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Trusted By Industry Leaders
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            We collaborate with leading organizations to deliver exceptional
-            value
-          </p>
-        </div>
-
-        {/* Partner Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-linear-to-br from-blue-100 to-gray-100 rounded-lg flex items-center justify-center text-blue-600 font-bold text-xl">
-                  {partner.name
-                    .split(" ")
-                    .map((word) => word[0])
-                    .join("")}
-                </div>
-                <h4 className="font-bold text-gray-800">{partner.name}</h4>
-                <p className="text-sm text-gray-600 mt-1">{partner.type}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* CTA Section */}
         <div className="bg-linear-to-r from-blue-900 to-blue-800 rounded-3xl p-8 md:p-12 text-white text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-6">
-            Ready to Start Your Journey with NexQore?
+            Ready to Start Your Journey with NexQbyte?
           </h3>
           <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            Whether you&apos;re looking to upgrade your skills or need business
-            solutions, we&apos;re here to help.
+            Whether you&apos;re looking to upgrade business solutions,
+            we&apos;re here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/connection"
               className="bg-white text-blue-900 hover:bg-gray-100 font-semibold px-8 py-4 rounded-lg transition-colors"
             >
               Get in Touch
             </Link>
             <Link
-              href="/courses"
+              href="/services"
               className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-lg transition-colors"
             >
-              Browse Courses
+              Browse Services
             </Link>
           </div>
         </div>
@@ -100,30 +69,28 @@ const PartnerBrands = () => {
         {/* SEO Content */}
         <div className="mt-16 prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            About NexQore - Your Partner in Digital Transformation
+            About NexQbyte Solution - Your Digital Innovation Partner
           </h2>
           <p className="text-gray-600 mb-4">
-            NexQore is a leading IT training and business solutions company
-            based in Nepal, dedicated to empowering individuals and
-            organizations through technology education and digital
-            transformation services. Founded in 2018, we have rapidly grown to
-            become one of the most trusted names in professional skill
-            development.
+            NexQbyte Solution is a premier technology company based in Nepal,
+            dedicated to delivering cutting-edge digital solutions for
+            businesses worldwide. Founded in 2018, we have rapidly grown to
+            become one of the most trusted names in custom software development,
+            mobile applications, and AI-powered digital transformation.
           </p>
           <p className="text-gray-600 mb-4">
-            Our comprehensive portfolio includes IT training programs in Full
-            Stack Development, Cybersecurity, Data Science, and Cloud Computing;
-            business skill development in Digital Marketing, Share Market
-            Trading, and Entrepreneurship; and professional IT solutions
-            including custom software development, website creation, and digital
-            marketing services for businesses.
+            Our comprehensive service portfolio includes custom website and web
+            application development, native iOS and Android mobile apps, UI/UX
+            design, AI and machine learning solutions, digital marketing, and
+            cloud infrastructure services. We serve clients across e-commerce,
+            healthcare, finance, education, and startup sectors.
           </p>
           <p className="text-gray-600">
-            What sets NexQore apart is our industry-aligned curriculum, expert
-            trainers with real-world experience, and a strong focus on
-            practical, project-based learning. We maintain a 95% placement rate
-            for our graduates and have partnered with 200+ companies for talent
-            acquisition and business solutions.
+            What sets Astra apart is our agile development methodology, expert
+            team of 15+ developers and designers, and a strong focus on
+            delivering scalable, secure, and user-centric solutions. We maintain
+            a 95% client satisfaction rate and have successfully delivered 180+
+            projects for businesses across 8 countries.
           </p>
         </div>
       </div>

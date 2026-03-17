@@ -15,29 +15,59 @@ import {
 const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "Training", href: "/nepal" },
-    { name: "Event", href: "/abroad" },
     { name: "Services", href: "/services" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "About Us", href: "/about" },
-    { name: "Connect Us", href: "/contact" },
+    { name: "Contact", href: "/connection" },
+    { name: "Package", href: "/package" },
+    { name: "Admin", href: "/admin" },
   ];
 
   const services = [
-    { name: "IT Training", href: "/services/university-selection" },
-    { name: "Professional Development", href: "/services/admission" },
-    { name: "Web Designing", href: "/services/visa" },
-    { name: "App Development", href: "/services/scholarship" },
-    { name: "Graphics Design", href: "/services/documentation" },
-    { name: "Share Marketing", href: "/services/pre-departure" },
-    { name: "Business Development", href: "/services/pre-departure" },
+    { name: "Web Development", href: "/services/web-development" },
+    { name: "App Development", href: "/services/app-development" },
+    { name: "Digital Marketing", href: "/services/digital-marketing" },
+    { name: "Graphics Design", href: "/services/graphics-design" },
+    { name: "AI Solutions", href: "/services/ai-solutions" },
+    { name: "Cloud Services", href: "/services/cloud" },
+    { name: "UI/UX Design", href: "/services/ui-ux" },
+  ];
+
+  const industries = [
+    { name: "E-commerce", href: "/industries/ecommerce" },
+    { name: "Healthcare", href: "/industries/healthcare" },
+    { name: "Finance", href: "/industries/finance" },
+    { name: "Education", href: "/industries/education" },
+    { name: "Real Estate", href: "/industries/real-estate" },
+    { name: "Startups", href: "/industries/startups" },
   ];
 
   const socialLinks = [
-    { icon: <FaFacebookF />, href: "#", label: "Facebook" },
-    { icon: <FaTwitter />, href: "#", label: "Twitter" },
-    { icon: <FaInstagram />, href: "#", label: "Instagram" },
-    { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn" },
-    { icon: <FaYoutube />, href: "#", label: "YouTube" },
+    {
+      icon: <FaFacebookF />,
+      href: "https://facebook.com/NEXQBYTEbyte",
+      label: "Facebook",
+    },
+    {
+      icon: <FaTwitter />,
+      href: "https://twitter.com/NEXQBYTEbyte",
+      label: "Twitter",
+    },
+    {
+      icon: <FaInstagram />,
+      href: "https://instagram.com/NEXQBYTEbyte",
+      label: "Instagram",
+    },
+    {
+      icon: <FaLinkedinIn />,
+      href: "https://linkedin.com/company/NEXQBYTEbyte",
+      label: "LinkedIn",
+    },
+    {
+      icon: <FaYoutube />,
+      href: "https://youtube.com/NEXQBYTEbyte",
+      label: "YouTube",
+    },
   ];
 
   return (
@@ -49,22 +79,24 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex flex-col">
               <div className="text-2xl font-bold tracking-wider text-white mb-1">
-                ASTRA
+                NEXQBYTE
               </div>
               <div className="text-xs tracking-[0.3em] text-blue-300 font-semibold">
-                INTERNATIONAL EDUCATION
+                SOLUTION
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Your trusted partner for education consultancy in Nepal and
-              abroad. We guide students to achieve their academic dreams in top
-              destinations worldwide.
+              Your trusted technology partner for digital transformation. We
+              deliver innovative web, mobile, AI, and cloud solutions that help
+              businesses grow and succeed in the digital age.
             </p>
             <div className="flex space-x-3 pt-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-10 h-10 flex items-center justify-center bg-blue-900 rounded-full hover:bg-blue-700 hover:scale-105 transition-all duration-300"
                 >
@@ -117,7 +149,7 @@ const Footer = () => {
           {/* Contact Information */}
           <div>
             <h3 className="text-xl font-bold mb-6 pb-2 border-b border-blue-800">
-              Contact Us
+              Get In Touch
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start">
@@ -126,34 +158,35 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <FaPhone className="text-blue-400 mr-3 shrink-0" />
-                <span className="text-gray-300">+977 1-1234567</span>
+                <span className="text-gray-300">+977 9849748294</span>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="text-blue-400 mr-3 shrink-0" />
-                <span className="text-gray-300">info@astraeducation.com</span>
+                <span className="text-gray-300">info@NEXQBYTEbyte.com</span>
               </li>
               <li className="flex items-start">
                 <FaClock className="text-blue-400 mt-1 mr-3 shrink-0" />
-                <span className="text-gray-300">Sun-Fri: 10AM - 6PM</span>
+                <span className="text-gray-300">Mon-Fri: 9AM - 6PM</span>
               </li>
             </ul>
+          </div>
+        </div>
 
-            {/* Newsletter Subscription */}
-            <div className="mt-6">
-              <h4 className="font-semibold mb-3 text-blue-300">
-                Subscribe to Newsletter
-              </h4>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="grow px-4 py-2 rounded-l-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-md transition-colors duration-300">
-                  Subscribe
-                </button>
-              </div>
-            </div>
+        {/* Industries We Serve */}
+        <div className="mt-12 pt-8 border-t border-blue-800">
+          <h3 className="text-center text-xl font-bold mb-6">
+            Industries We Serve
+          </h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {industries.map((industry) => (
+              <Link
+                key={industry.name}
+                href={industry.href}
+                className="px-4 py-2 bg-blue-900/50 hover:bg-blue-800 rounded-full text-sm transition-all duration-300 hover:scale-105"
+              >
+                {industry.name}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -163,8 +196,8 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Astra International Education. All
-              rights reserved.
+              © {new Date().getFullYear()} NEXQBYTE IT Solutions. All rights
+              reserved.
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
               <Link
@@ -178,7 +211,7 @@ const Footer = () => {
                 href="/terms"
                 className="hover:text-white transition-colors duration-300"
               >
-                Terms & Conditions
+                Terms of Service
               </Link>
               <span className="text-blue-600">|</span>
               <Link
@@ -194,30 +227,6 @@ const Footer = () => {
               >
                 FAQ
               </Link>
-            </div>
-          </div>
-
-          {/* Accreditation Badges */}
-          <div className="flex justify-center items-center gap-6 mt-6 pt-6 border-t border-blue-900">
-            <div className="text-center">
-              <div className="text-xs text-gray-400 mb-1">Accredited by</div>
-              <div className="text-sm font-semibold text-blue-300">
-                Nepal Government
-              </div>
-            </div>
-            <div className="h-6 w-px bg-blue-800"></div>
-            <div className="text-center">
-              <div className="text-xs text-gray-400 mb-1">Member of</div>
-              <div className="text-sm font-semibold text-blue-300">
-                Education Council
-              </div>
-            </div>
-            <div className="h-6 w-px bg-blue-800"></div>
-            <div className="text-center">
-              <div className="text-xs text-gray-400 mb-1">Certified</div>
-              <div className="text-sm font-semibold text-blue-300">
-                ISO 9001:2015
-              </div>
             </div>
           </div>
         </div>

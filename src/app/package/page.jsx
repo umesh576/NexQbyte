@@ -1,17 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-// import ServiceCard from "@/components/ServiceCard";
-// import CategoryFilter from "@/components/CategoryFilter";
-// import StatsSection from "@/components/StatsSection";
-// import TestimonialSection from "@/components/TestimonialSection";
-// import FAQSection from "@/components/FAQSection";
+
 import { services } from "@/lib/servicesData";
 import StatsSection from "@/component/package/StatsSection";
 import CategoryFilter from "@/component/package/CategoryFilter";
 import ServiceCard from "@/component/package/ServiceCard";
 import TestimonialSection from "@/component/package/TestimonialSection";
 import FAQSection from "@/component/package/FAQSection";
+import Link from "next/link";
 
 const Page = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -34,12 +31,11 @@ const Page = () => {
             design, and comprehensive IT solutions
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold text-lg transition-colors">
-              Get Free Quote
-            </button>
-            <button className="bg-transparent border-2 border-white hover:bg-white/10 px-8 py-3 rounded-full font-semibold text-lg transition-colors">
-              View All Services
-            </button>
+            <Link href={"/services"}>
+              <button className="bg-transparent border-2 border-white hover:bg-white/10 px-8 py-3 rounded-full font-semibold text-lg transition-colors cursor-pointer">
+                View All Services
+              </button>
+            </Link>
           </div>
         </div>
       </div>

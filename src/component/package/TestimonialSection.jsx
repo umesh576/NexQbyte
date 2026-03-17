@@ -3,25 +3,25 @@ import React from "react";
 const TestimonialSection = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      company: "TechStart Inc.",
-      text: "NexQbyte delivered our e-commerce platform ahead of schedule. Their professionalism and attention to detail were outstanding!",
+      name: "Ramsang Gurung",
+      company: "fadeXplay",
+      text: "NexQbyte delivered our best attractive platform ahead of schedule. Their professionalism and attention to detail were outstanding!",
       rating: 5,
-      avatar: "👩‍💼",
+      avatar: "🙎",
     },
     {
-      name: "Mike Rodriguez",
+      name: "Ambika Joshi",
       company: "Global Retail Corp",
       text: "The mobile app they developed increased our customer engagement by 300%. Highly recommended!",
       rating: 5,
-      avatar: "👨‍💼",
+      avatar: "🙎",
     },
     {
-      name: "Emma Wilson",
+      name: "Tek Raj Ojha",
       company: "Creative Design Studio",
       text: "Their UI/UX design services transformed our website. The user feedback has been incredibly positive.",
       rating: 5,
-      avatar: "👩‍🎨",
+      avatar: "🙎",
     },
   ];
 

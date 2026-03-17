@@ -61,12 +61,7 @@ const Header = () => {
           >
             Package
           </Link>
-          <Link
-            href="/training"
-            className="hover:text-[#F9A826] transition-colors"
-          >
-            Training
-          </Link>
+
           <Link
             href="/services"
             className="hover:text-[#F9A826] transition-colors"
@@ -74,13 +69,13 @@ const Header = () => {
             Services
           </Link>
           <Link
-            href="/about-us"
+            href="/about"
             className="hover:text-[#F9A826] transition-colors"
           >
             About Us
           </Link>
           <Link
-            href="/connect-us"
+            href="/connection"
             className="hover:text-[#F9A826] transition-colors"
           >
             Connect Us
