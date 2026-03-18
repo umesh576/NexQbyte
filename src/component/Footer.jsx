@@ -16,7 +16,6 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "Case Studies", href: "/case-studies" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/connection" },
     { name: "Package", href: "/package" },
@@ -28,9 +27,6 @@ const Footer = () => {
     { name: "App Development", href: "/services/app-development" },
     { name: "Digital Marketing", href: "/services/digital-marketing" },
     { name: "Graphics Design", href: "/services/graphics-design" },
-    { name: "AI Solutions", href: "/services/ai-solutions" },
-    { name: "Cloud Services", href: "/services/cloud" },
-    { name: "UI/UX Design", href: "/services/ui-ux" },
   ];
 
   const industries = [

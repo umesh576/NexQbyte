@@ -24,6 +24,7 @@ import {
   FaCamera,
   FaMagic,
   FaVectorSquare,
+  FaHeart, // Added missing import
 } from "react-icons/fa";
 import {
   HiOutlineSparkles,
@@ -42,9 +43,10 @@ import {
   TbBrandAdobe,
   TbBrandFigma,
   TbBrandSketch,
-  TbBrandCanva,
+  TbBrandCarbon,
 } from "react-icons/tb";
 import { GiPaintBrush, GiModernCity, GiAbstract001 } from "react-icons/gi";
+import { SiCanva } from "react-icons/si";
 
 export const metadata = {
   title: "Graphic Design | NexQbyte - Creative Design Solutions",
@@ -259,7 +261,7 @@ const Page = () => {
     { name: "Adobe InDesign", icon: <TbBrandAdobe /> },
     { name: "Figma", icon: <TbBrandFigma /> },
     { name: "Sketch", icon: <TbBrandSketch /> },
-    { name: "Canva", icon: <TbBrandCanva /> },
+    { name: "Canva", icon: <SiCanva /> },
     { name: "Procreate", icon: <FaPaintBrush /> },
     { name: "After Effects", icon: <FaVideo /> },
   ];
@@ -288,7 +290,7 @@ const Page = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#084885] to-black">
+    <main className="min-h-screen bg-linear-to-b from-[#084885] to-black">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Background Pattern */}
@@ -296,7 +298,7 @@ const Page = () => {
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, #5aba70 1px, transparent 0)`,
+              backgroundImage: `radial-linear(circle at 2px 2px, #5aba70 1px, transparent 0)`,
               backgroundSize: "40px 40px",
             }}
           />
@@ -327,8 +329,8 @@ const Page = () => {
             </h1>
 
             <p className="text-xl text-white/70 mb-8 leading-relaxed max-w-2xl mx-auto animate-slideUp animation-delay-200">
-              Great design isn't just about looking good – it's about
-              communicating your brand's story, building trust, and driving
+              Great design isn&apos;t just about looking good – it&apos;s about
+              communicating your brand&apos;s story, building trust, and driving
               business results.
             </p>
 
@@ -418,7 +420,7 @@ const Page = () => {
       </section>
 
       {/* Design Services */}
-      <section className="py-20 bg-gradient-to-b from-[#5aba70]/5 to-transparent">
+      <section className="py-20 bg-linear-to-b from-[#5aba70]/5 to-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -489,7 +491,7 @@ const Page = () => {
       </section>
 
       {/* Why Collaborate with NexQbyte */}
-      <section className="py-20 bg-gradient-to-b from-[#084885]/30 to-transparent">
+      <section className="py-20 bg-linear-to-b from-[#084885]/30 to-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -562,7 +564,7 @@ const Page = () => {
       </section>
 
       {/* Portfolio Preview */}
-      <section className="py-16 bg-gradient-to-b from-[#5aba70]/5 to-transparent">
+      <section className="py-16 bg-linear-to-b from-[#5aba70]/5 to-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -577,7 +579,7 @@ const Page = () => {
             {portfolio.map((item, index) => (
               <div
                 key={index}
-                className="group relative h-48 bg-gradient-to-br from-[#5aba70]/20 to-[#084885]/40 rounded-xl overflow-hidden cursor-pointer animate-fadeIn"
+                className="group relative h-48 bg-linear-to-br from-[#5aba70]/20 to-[#084885]/40 rounded-xl overflow-hidden cursor-pointer animate-fadeIn"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -617,9 +619,9 @@ const Page = () => {
                 <div>
                   <p className="text-white/80 text-lg italic mb-4">
                     NexQbyte completely transformed our brand identity. Their
-                    designs helped us stand out in a crowded market, and we've
-                    seen a 150% increase in engagement since launching our new
-                    branding.
+                    designs helped us stand out in a crowded market, and
+                    we&apos;ve seen a 150% increase in engagement since
+                    launching our new branding.
                   </p>
                   <div>
                     <p className="text-white font-semibold">- Priya Sharma</p>
@@ -643,8 +645,8 @@ const Page = () => {
               <span className="text-[#5aba70]">Brand</span>?
             </h2>
             <p className="text-white/60 text-lg mb-8">
-              Let's create stunning designs that capture your brand's essence
-              and captivate your audience.
+              Let&apos;s create stunning designs that capture your brand&apos;s
+              essence and captivate your audience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

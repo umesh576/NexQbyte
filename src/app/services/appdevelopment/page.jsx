@@ -243,7 +243,7 @@ const Page = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#084885] to-black">
+    <main className="min-h-screen bg-linear-to-b from-[#084885] to-black">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Background Pattern */}
@@ -251,7 +251,7 @@ const Page = () => {
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, #5aba70 1px, transparent 0)`,
+              backgroundImage: `radial-linear(circle at 2px 2px, #5aba70 1px, transparent 0)`,
               backgroundSize: "40px 40px",
             }}
           />
@@ -340,7 +340,7 @@ const Page = () => {
               <span className="text-[#5aba70]">Mobile App</span>
             </h2>
             <p className="text-white/60 max-w-2xl mx-auto">
-              Mobile apps are no longer optional – they're essential for
+              Mobile apps are no longer optional - they&apos;re essential for
               business growth and customer engagement
             </p>
           </div>
@@ -376,7 +376,7 @@ const Page = () => {
       </section>
 
       {/* Types of Apps We Build */}
-      <section className="py-20 bg-gradient-to-b from-[#5aba70]/5 to-transparent">
+      <section className="py-20 bg-linear-to-b from-[#5aba70]/5 to-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -454,7 +454,7 @@ const Page = () => {
       </section>
 
       {/* Why Collaborate with NexQbyte */}
-      <section className="py-20 bg-gradient-to-b from-[#084885]/30 to-transparent">
+      <section className="py-20 bg-linear-to-b from-[#084885]/30 to-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -462,8 +462,8 @@ const Page = () => {
               NexQbyte?
             </h2>
             <p className="text-white/60 max-w-2xl mx-auto">
-              We're not just developers – we're your technology partners
-              committed to your success
+              We&apos;re not just developers – we&apos;re your technology
+              partners committed to your success
             </p>
           </div>
 
@@ -529,7 +529,7 @@ const Page = () => {
       </section>
 
       {/* Testimonial Section */}
-      <section className="py-16 bg-gradient-to-b from-[#5aba70]/10 to-transparent">
+      <section className="py-16 bg-linear-to-b from-[#5aba70]/10 to-transparent">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/5 rounded-3xl p-8 border border-white/10 hover:border-[#5aba70]/30 transition-all">
@@ -562,7 +562,8 @@ const Page = () => {
               Ready to Build Your <span className="text-[#5aba70]">App</span>?
             </h2>
             <p className="text-white/60 text-lg mb-8">
-              Let's discuss your app idea and create something amazing together.
+              Let&apos;s discuss your app idea and create something amazing
+              together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
