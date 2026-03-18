@@ -1,127 +1,358 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, X, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Package", href: "/package" },
+    {
+      name: "Services",
+      href: "/services",
+      dropdown: [
+        { name: "Web Development", href: "/services/web" },
+        { name: "App Development", href: "/services/app" },
+        { name: "Digital Marketing", href: "/services/digital" },
+        { name: "Graphic Design", href: "/services/design" },
+      ],
+    },
+    { name: "About Us", href: "/about" },
+    { name: "Connect Us", href: "/connection" },
+  ];
+
+  const handleDropdownHover = (index) => {
+    if (window.innerWidth >= 1024) {
+      setActiveDropdown(activeDropdown === index ? null : index);
+    }
+  };
+
   return (
-    <header className="w-full bg-[#F8F9FC] shadow-sm font-sans">
-      {/* Top bar: contact and tagline */}
-      <div className="bg-[#1B1F3B] text-white text-sm py-2.5">
-        <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between">
-          {/* left: contact details */}
-          <div className="flex items-center gap-6 text-gray-300">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-gray-400" />
-              <span>+977 9849748294</span>
+    <header
+      className={`w-full font-sans sticky top-0 z-50 transition-all duration-300 ${
+        scrolled ? "shadow-lg" : ""
+      }`}
+    >
+      {/* Top bar - Hidden on mobile */}
+      <div className="hidden lg:block bg-linear-to-r from-[#1B1F3B] to-[#2a2f55] text-white">
+        <div className="max-w-7xl mx-auto px-6 py-2.5">
+          <div className="flex items-center justify-between">
+            {/* Left: contact details */}
+            <div className="flex items-center gap-6 text-gray-300 text-sm">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-2 hover:text-white transition-colors group"
+              >
+                <Phone className="w-4 h-4 text-[#F9A826] group-hover:rotate-12 transition-transform" />
+                <a href="tel:+9779849748294" className="hover:text-[#F9A826]">
+                  +977 9849748294
+                </a>
+              </motion.div>
+              <div className="w-px h-4 bg-gray-600"></div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-2 hover:text-white transition-colors group"
+              >
+                <Mail className="w-4 h-4 text-[#F9A826] group-hover:rotate-12 transition-transform" />
+                <a
+                  href="mailto:nexqbytesolution@gmail.com"
+                  className="hover:text-[#F9A826]"
+                >
+                  nexqbytesolution@gmail.com
+                </a>
+              </motion.div>
+              <div className="w-px h-4 bg-gray-600"></div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <MapPin className="w-4 h-4 text-[#F9A826]" />
+                <span>Kathmandu, Nepal</span>
+              </motion.div>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-gray-400" />
-              <span>nexqbytesolution@gmail.com</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-gray-400" />
-              <span>Kathmandu, Nepal</span>
-            </div>
-          </div>
 
-          {/* right: "We Serve: Skill, Growth, Experiences" */}
-          <div className="text-gray-300 text-sm">
-            We Serve:{" "}
-            <span className="text-white font-semibold">
-              Skill, Growth, Experiences
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Main header: Logo + Navigation + Apply button */}
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between bg-white">
-        {/* Logo with dummy image - REPLACE THIS SRC WITH YOUR ACTUAL LOGO */}
-        <div className="flex items-center">
-          <div className="relative h-12 w-40">
-            <Image
-              src="/logo.jpeg"
-              alt="NexQore Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-        </div>
-
-        {/* Desktop navigation */}
-        <nav className="hidden lg:flex items-center gap-8 text-[#1B1F3B] font-medium">
-          <Link href="/" className="hover:text-[#F9A826] transition-colors">
-            Home
-          </Link>
-          <Link
-            href="/package"
-            className="hover:text-[#F9A826] transition-colors"
-          >
-            Package
-          </Link>
-
-          <Link
-            href="/services"
-            className="hover:text-[#F9A826] transition-colors"
-          >
-            Services
-          </Link>
-          <Link
-            href="/about"
-            className="hover:text-[#F9A826] transition-colors"
-          >
-            About Us
-          </Link>
-          <Link
-            href="/connection"
-            className="hover:text-[#F9A826] transition-colors"
-          >
-            Connect Us
-          </Link>
-        </nav>
-
-        {/* Apply Now button */}
-        <div className="flex items-center gap-4">
-          <button className="bg-[#F9A826] hover:bg-[#e09616] text-[#1B1F3B] text-sm font-bold py-2.5 px-6 rounded-md transition duration-200 shadow-sm">
-            Apply Now
-          </button>
-
-          {/* Mobile hamburger */}
-          <button className="lg:hidden text-[#1B1F3B] hover:text-[#F9A826] focus:outline-none">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            {/* Right: Tagline with animation */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="text-gray-300 text-sm"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+              We Serve:{" "}
+              <span className="text-[#F9A826] font-semibold relative group">
+                Skill, Growth, Experiences
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#F9A826] group-hover:w-full transition-all duration-300"></span>
+              </span>
+            </motion.div>
+          </div>
         </div>
       </div>
 
-      {/* Mobile contact row */}
-      <div className="lg:hidden bg-[#1B1F3B] text-gray-300 px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
-        <div className="flex items-center gap-1">
-          <Phone className="w-3 h-3" /> +977 1-1234567
+      {/* Main header */}
+      <motion.div
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`bg-white transition-all duration-300 ${
+          scrolled ? "py-2 shadow-md" : "py-4"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="relative z-50">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="relative h-12 w-40 sm:h-14 sm:w-44"
+            >
+              <Image
+                src="/logo.jpeg"
+                alt="NexQore Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
+          </Link>
+
+          {/* Desktop navigation */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navItems.map((item, index) => (
+              <div
+                key={item.name}
+                className="relative group"
+                onMouseEnter={() => handleDropdownHover(index)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                {item.dropdown ? (
+                  <>
+                    <button
+                      className={`flex items-center gap-1 px-4 py-2 text-[#1B1F3B] font-medium rounded-lg hover:text-[#F9A826] transition-all duration-300 group-hover:bg-[#F9A826]/5 ${
+                        activeDropdown === index
+                          ? "text-[#F9A826] bg-[#F9A826]/5"
+                          : ""
+                      }`}
+                    >
+                      {item.name}
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          activeDropdown === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {activeDropdown === index && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50"
+                        >
+                          {item.dropdown.map((dropItem) => (
+                            <Link
+                              key={dropItem.name}
+                              href={dropItem.href}
+                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-[#F9A826]/10 hover:text-[#F9A826] transition-colors border-b border-gray-50 last:border-0"
+                              onClick={closeMenu}
+                            >
+                              {dropItem.name}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="relative px-4 py-2 text-[#1B1F3B] font-medium rounded-lg hover:text-[#F9A826] transition-all duration-300 group-hover:bg-[#F9A826]/5"
+                  >
+                    {item.name}
+                    <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#F9A826] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
+
+          {/* Apply Now button */}
+          <div className="flex items-center gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative overflow-hidden group bg-linear-to-r from-[#F9A826] to-[#e09616] text-[#1B1F3B] text-sm font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              <span className="relative z-10">Apply Now</span>
+              <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+            </motion.button>
+
+            {/* Mobile menu button */}
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleMenu}
+              className="lg:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-lg bg-[#F9A826]/10 text-[#1B1F3B] hover:bg-[#F9A826] hover:text-white transition-all duration-300"
+              aria-label="Toggle menu"
+            >
+              <AnimatePresence mode="wait">
+                {isOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                  >
+                    <X className="w-5 h-5" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                  >
+                    <Menu className="w-5 h-5" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
+          </div>
         </div>
-        <div className="flex items-center gap-1">
-          <Mail className="w-3 h-3" /> info@nexqore.com
-        </div>
-        <div className="flex items-center gap-1">
-          <MapPin className="w-3 h-3" /> Kathmandu
-        </div>
-        <div className="text-gray-300 ml-auto">
-          <span className="text-white font-medium">Skill, Growth, Exp</span>
-        </div>
-      </div>
+      </motion.div>
+
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeMenu}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+            />
+
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-linear-to-b from-white to-gray-50 shadow-2xl z-50 lg:hidden overflow-y-auto"
+            >
+              <div className="p-6">
+                {/* Mobile menu header */}
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
+                  <div className="relative h-10 w-32">
+                    <Image
+                      src="/logo.jpeg"
+                      alt="NexQore Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <button
+                    onClick={closeMenu}
+                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Mobile contact info */}
+                <div className="mb-6 space-y-3 pb-4 border-b border-gray-200">
+                  <a
+                    href="tel:+9779849748294"
+                    className="flex items-center gap-3 text-gray-600 hover:text-[#F9A826] transition-colors"
+                  >
+                    <Phone className="w-4 h-4 text-[#F9A826]" />
+                    <span className="text-sm">+977 9849748294</span>
+                  </a>
+                  <a
+                    href="mailto:nexqbytesolution@gmail.com"
+                    className="flex items-center gap-3 text-gray-600 hover:text-[#F9A826] transition-colors"
+                  >
+                    <Mail className="w-4 h-4 text-[#F9A826]" />
+                    <span className="text-sm">nexqbytesolution@gmail.com</span>
+                  </a>
+                  <div className="flex items-center gap-3 text-gray-600">
+                    <MapPin className="w-4 h-4 text-[#F9A826]" />
+                    <span className="text-sm">Kathmandu, Nepal</span>
+                  </div>
+                </div>
+
+                {/* Mobile navigation */}
+                <nav className="space-y-1">
+                  {navItems.map((item) => (
+                    <div key={item.name}>
+                      {item.dropdown ? (
+                        <div className="space-y-1">
+                          <div className="px-4 py-2 text-[#F9A826] font-semibold text-sm uppercase tracking-wider">
+                            {item.name}
+                          </div>
+                          {item.dropdown.map((dropItem) => (
+                            <Link
+                              key={dropItem.name}
+                              href={dropItem.href}
+                              onClick={closeMenu}
+                              className="block px-4 py-3 text-gray-600 hover:text-[#F9A826] hover:bg-[#F9A826]/5 rounded-lg transition-all ml-4 border-l-2 border-gray-200 hover:border-[#F9A826]"
+                            >
+                              {dropItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          onClick={closeMenu}
+                          className="block px-4 py-3 text-gray-700 hover:text-[#F9A826] hover:bg-[#F9A826]/5 rounded-lg transition-all font-medium"
+                        >
+                          {item.name}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </nav>
+
+                {/* Mobile tagline */}
+                <div className="mt-8 p-4 bg-linear-to-r from-[#F9A826]/10 to-transparent rounded-lg">
+                  <p className="text-sm text-gray-600">
+                    We Serve:{" "}
+                    <span className="text-[#F9A826] font-semibold">
+                      Skill, Growth, Experiences
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
