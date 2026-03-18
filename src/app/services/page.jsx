@@ -1,8 +1,4 @@
-import BusinessTrainingServices from "@/component/services/BusinessTrainingServices";
-import EnrollmentProcess from "@/component/services/EnrollmentProcess";
 import ITCompanyServices from "@/component/services/ITCompanyServices";
-import ITTrainingServices from "@/component/services/ITTrainingServices";
-import ServiceCTA from "@/component/services/ServiceCTA";
 import ServicesCategories from "@/component/services/ServicesCategories";
 import ServicesHero from "@/component/services/ServicesHero";
 import WhyChooseUs from "@/component/services/WhyChooseUs";
@@ -26,12 +22,8 @@ export default function ServicesPage() {
     <main>
       <ServicesHero />
       <ServicesCategories />
-      <ITTrainingServices />
-      <BusinessTrainingServices />
       <ITCompanyServices />
       <WhyChooseUs />
-      <EnrollmentProcess />
-      <ServiceCTA />
     </main>
   );
 }

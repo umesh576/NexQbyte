@@ -24,7 +24,7 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: "Web Development", href: "/services/web-development" },
+    { name: "Web Development", href: "/website" },
     { name: "App Development", href: "/services/app-development" },
     { name: "Digital Marketing", href: "/services/digital-marketing" },
     { name: "Graphics Design", href: "/services/graphics-design" },
@@ -198,35 +198,6 @@ const Footer = () => {
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
               © {new Date().getFullYear()} NEXQBYTE IT Solutions. All rights
               reserved.
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-              <Link
-                href="/privacy"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Privacy Policy
-              </Link>
-              <span className="text-blue-600">|</span>
-              <Link
-                href="/terms"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Terms of Service
-              </Link>
-              <span className="text-blue-600">|</span>
-              <Link
-                href="/sitemap"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Sitemap
-              </Link>
-              <span className="text-blue-600">|</span>
-              <Link
-                href="/faq"
-                className="hover:text-white transition-colors duration-300"
-              >
-                FAQ
-              </Link>
             </div>
           </div>
         </div>
