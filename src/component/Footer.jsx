@@ -23,10 +23,10 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: "Web Development", href: "/website" },
-    { name: "App Development", href: "/services/app-development" },
-    { name: "Digital Marketing", href: "/services/digital-marketing" },
-    { name: "Graphics Design", href: "/services/graphics-design" },
+    { name: "Web Design", href: "/services/website" },
+    { name: "App Design", href: "/services/appdevelopment" },
+    { name: "Digital Marketing", href: "/services/digitalmarketing" },
+    { name: "Graphic Design", href: "/services/graphicsDesigning" },
   ];
 
   const industries = [
@@ -158,7 +158,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="text-blue-400 mr-3 shrink-0" />
-                <span className="text-gray-300">info@NEXQBYTEbyte.com</span>
+                <span className="text-gray-300">nexqbytesolution@gmail.com
+</span>
               </li>
               <li className="flex items-start">
                 <FaClock className="text-blue-400 mt-1 mr-3 shrink-0" />
