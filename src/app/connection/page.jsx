@@ -50,7 +50,7 @@ const page = () => {
                 href="mailto:hello@example.com"
                 className="text-black hover:text-gray-700 transition-colors"
               >
-                hello@example.com
+                nexqbytesolution@gmail.com
               </a>
             </div>
 
