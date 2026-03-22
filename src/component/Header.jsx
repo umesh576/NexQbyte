@@ -13,6 +13,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   // Handle scroll effect
   useEffect(() => {
@@ -32,8 +33,18 @@ const Header = () => {
     }
   }, [isOpen]);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+  const toggleMenu = () => {
+    setIsOpen((prev) => {
+      const next = !prev;
+      if (!next) setMobileServicesOpen(false);
+      return next;
+    });
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    setMobileServicesOpen(false);
+  };
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -177,7 +188,7 @@ const Header = () => {
             >
               <Image
                 src="/logo.jpeg"
-                alt="NexQore Logo"
+                alt="NexQbyte Logo"
                 fill
                 className="object-contain"
                 priority
@@ -249,11 +260,11 @@ const Header = () => {
           </nav>
 
           {/* Apply Now button */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative overflow-hidden group bg-linear-to-r from-[#F9A826] to-[#e09616] text-[#1B1F3B] text-sm font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              className="hidden lg:inline-flex relative overflow-hidden group bg-linear-to-r from-[#F9A826] to-[#e09616] text-[#1B1F3B] text-sm font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
             >
               <span className="relative cursor-pointer z-10">Apply Now</span>
               <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
@@ -311,19 +322,28 @@ const Header = () => {
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-linear-to-b from-white to-gray-50 shadow-2xl z-50 lg:hidden overflow-y-auto"
             >
+              <button
+                onClick={closeMenu}
+                aria-label="Close menu"
+                className="sticky top-4 ml-auto mr-4 mt-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white/95 text-gray-700 shadow-md hover:bg-[#F9A826] hover:text-white transition-all duration-300"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
               <div className="p-6">
                 {/* Mobile menu header */}
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
                   <div className="relative h-10 w-32">
                     <Image
                       src="/logo.jpeg"
-                      alt="NexQore Logo"
+                      alt="NexQbyte Logo"
                       fill
                       className="object-contain"
                     />
                   </div>
                   <button
                     onClick={closeMenu}
+                    aria-label="Close menu"
                     className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
                   >
                     <X className="w-5 h-5" />
@@ -353,30 +373,53 @@ const Header = () => {
                 </div>
 
                 {/* Mobile navigation */}
-                <nav className="space-y-1">
+                <nav className="space-y-2">
                   {navItems.map((item) => (
                     <div key={item.name}>
                       {item.dropdown ? (
-                        <div className="space-y-1">
-                          <div className="px-4 py-2 text-[#F9A826] font-semibold text-sm uppercase tracking-wider">
-                            {item.name}
-                          </div>
-                          {item.dropdown.map((dropItem) => (
-                            <Link
-                              key={dropItem.name}
-                              href={dropItem.href}
-                              onClick={closeMenu}
-                              className="block px-4 py-3 text-gray-600 hover:text-[#F9A826] hover:bg-[#F9A826]/5 rounded-lg transition-all ml-4 border-l-2 border-gray-200 hover:border-[#F9A826]"
-                            >
-                              {dropItem.name}
-                            </Link>
-                          ))}
+                        <div className="rounded-xl border border-gray-200 bg-white">
+                          <button
+                            onClick={() => setMobileServicesOpen((prev) => !prev)}
+                            className="w-full flex items-center justify-between px-4 py-3 text-gray-700 font-medium"
+                          >
+                            <span>{item.name}</span>
+                            <ChevronDown
+                              className={`h-4 w-4 transition-transform duration-300 ${
+                                mobileServicesOpen ? "rotate-180 text-[#F9A826]" : ""
+                              }`}
+                            />
+                          </button>
+
+                          <AnimatePresence initial={false}>
+                            {mobileServicesOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.25 }}
+                                className="overflow-hidden border-t border-gray-100"
+                              >
+                                <div className="p-2 space-y-1">
+                                  {item.dropdown.map((dropItem) => (
+                                    <Link
+                                      key={dropItem.name}
+                                      href={dropItem.href}
+                                      onClick={closeMenu}
+                                      className="block px-3 py-2.5 text-sm text-gray-600 hover:text-[#F9A826] hover:bg-[#F9A826]/5 rounded-lg transition-all"
+                                    >
+                                      {dropItem.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </div>
                       ) : (
                         <Link
                           href={item.href}
                           onClick={closeMenu}
-                          className="block px-4 py-3 text-gray-700 hover:text-[#F9A826] hover:bg-[#F9A826]/5 rounded-lg transition-all font-medium"
+                          className="block rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-700 hover:text-[#F9A826] hover:bg-[#F9A826]/5 transition-all font-medium"
                         >
                           {item.name}
                         </Link>
@@ -387,12 +430,17 @@ const Header = () => {
 
                 {/* Mobile tagline */}
                 <div className="mt-8 p-4 bg-linear-to-r from-[#F9A826]/10 to-transparent rounded-lg">
-                  
+                  <p className="text-sm text-gray-600">
+                    We Serve:{" "}
+                    <span className="text-[#F9A826] font-semibold">
+                      Skill, Growth, Experiences
+                    </span>
+                  </p>
 
                   <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35, delay: 0.1 }}
+                    transition={{ duration: 0.35, delay: 0.08 }}
                     className="mt-4"
                   >
                     <p className="text-xs uppercase tracking-wider text-gray-500 mb-3">
