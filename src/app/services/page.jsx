@@ -7,6 +7,7 @@ import {
   FaCheckCircle,
   FaArrowRight,
 } from "react-icons/fa";
+import servicesData from "@/lib/servicesData.json";
 
 export const metadata = {
   title: "Services | NexQbyte - Web, App, Marketing & Design",
@@ -23,72 +24,14 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
-  const services = [
-    {
-      title: "Web Design",
-      href: "/services/website",
-      icon: <FaGlobe className="text-3xl text-[#5aba70]" />,
-      summary:
-        "Conversion-focused websites that look premium, load fast, and guide visitors to action.",
-      idealFor: "Businesses that need credibility, leads, and stronger online presence.",
-      outcomes: [
-        "Responsive UI for all devices",
-        "Speed and SEO-ready page structure",
-        "Clear service pages and CTAs",
-        "Easy-to-manage content layout",
-      ],
-      timeline: "2-6 weeks",
-      value: "Improves trust, visibility, and inquiry quality",
-    },
-    {
-      title: "App Design",
-      href: "/services/appdevelopment",
-      icon: <FaMobileAlt className="text-3xl text-[#5aba70]" />,
-      summary:
-        "User-centered app experiences that reduce friction and keep users engaged.",
-      idealFor: "Startups and businesses launching new products or redesigning existing apps.",
-      outcomes: [
-        "UX research and user flow mapping",
-        "Wireframes and high-fidelity screens",
-        "Component-based design system",
-        "Developer-ready handoff and specs",
-      ],
-      timeline: "3-8 weeks",
-      value: "Increases usability, retention, and product adoption",
-    },
-    {
-      title: "Digital Marketing",
-      href: "/services/digitalmarketing",
-      icon: <FaChartLine className="text-3xl text-[#5aba70]" />,
-      summary:
-        "Data-driven campaigns that attract qualified traffic and convert it into real revenue.",
-      idealFor: "Brands that want predictable growth through search, social, and paid channels.",
-      outcomes: [
-        "SEO and local search optimization",
-        "Social media strategy and creatives",
-        "Performance ad campaigns",
-        "Monthly reporting with action plan",
-      ],
-      timeline: "3+ months",
-      value: "Boosts reach, leads, and ROI with measurable KPIs",
-    },
-    {
-      title: "Graphic Design",
-      href: "/services/graphicsDesigning",
-      icon: <FaPalette className="text-3xl text-[#5aba70]" />,
-      summary:
-        "Brand visuals and marketing creatives that make your business instantly recognizable.",
-      idealFor: "Companies improving brand identity, campaign assets, and communication quality.",
-      outcomes: [
-        "Brand identity and logo packages",
-        "Social and ad design creatives",
-        "Sales and presentation materials",
-        "Print-ready and digital-ready assets",
-      ],
-      timeline: "1-4 weeks",
-      value: "Strengthens brand recall and campaign performance",
-    },
-  ];
+  const iconMap = {
+    "web-design": <FaGlobe className="text-3xl text-[#5aba70]" />,
+    "app-design": <FaMobileAlt className="text-3xl text-[#5aba70]" />,
+    "digital-marketing": <FaChartLine className="text-3xl text-[#5aba70]" />,
+    "graphic-design": <FaPalette className="text-3xl text-[#5aba70]" />,
+  };
+
+  const services = servicesData;
 
   return (
     <main className="min-h-screen bg-linear-to-b from-[#084885] to-black">
@@ -117,7 +60,7 @@ export default function ServicesPage() {
                 className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-7 hover:border-[#5aba70]/40 transition-all duration-300"
               >
                 <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#5aba70]/10">
-                  {service.icon}
+                  {iconMap[service.id]}
                 </div>
 
                 <h2 className="text-2xl font-bold text-white">{service.title}</h2>
