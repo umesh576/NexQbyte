@@ -39,10 +39,10 @@ const Header = () => {
       name: "Services",
       href: "/services",
       dropdown: [
-        { name: "Web Development", href: "/services/web" },
-        { name: "App Development", href: "/services/app" },
-        { name: "Digital Marketing", href: "/services/digital" },
-        { name: "Graphic Design", href: "/services/design" },
+        { name: "Web Design", href: "/services/website" },
+        { name: "App Design", href: "/services/appdevelopment" },
+        { name: "Digital Marketing", href: "/services/digitalmarketing" },
+        { name: "Graphic Design", href: "/services/graphicsDesigning" },
       ],
     },
     { name: "About Us", href: "/about" },
@@ -137,6 +137,7 @@ const Header = () => {
                 className="object-contain"
                 priority
               />
+
             </motion.div>
           </Link>
 
@@ -209,7 +210,7 @@ const Header = () => {
               whileTap={{ scale: 0.95 }}
               className="relative overflow-hidden group bg-linear-to-r from-[#F9A826] to-[#e09616] text-[#1B1F3B] text-sm font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
             >
-              <span className="relative z-10">Apply Now</span>
+              <span className="relative cursor-pointer z-10">Apply Now</span>
               <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </motion.button>
 
