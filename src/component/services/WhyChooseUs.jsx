@@ -76,7 +76,7 @@ const WhyChooseUs = () => {
     },
     {
       companyName: "Paradise Engineering",
-      logo: "/patner/paradise.png",
+      logo: "/patner/logo.png",
     },
   ];
 
