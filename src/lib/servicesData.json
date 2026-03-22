@@ -1,0 +1,66 @@
+[
+  {
+    "id": "web-design",
+    "menuTitle": "Web Design",
+    "title": "Web Design",
+    "href": "/services/website",
+    "summary": "Conversion-focused websites that look premium, load fast, and guide visitors to action.",
+    "idealFor": "Businesses that need credibility, leads, and stronger online presence.",
+    "outcomes": [
+      "Responsive UI for all devices",
+      "Speed and SEO-ready page structure",
+      "Clear service pages and CTAs",
+      "Easy-to-manage content layout"
+    ],
+    "timeline": "2-6 weeks",
+    "value": "Improves trust, visibility, and inquiry quality"
+  },
+  {
+    "id": "app-design",
+    "menuTitle": "App Design",
+    "title": "App Design",
+    "href": "/services/appdevelopment",
+    "summary": "User-centered app experiences that reduce friction and keep users engaged.",
+    "idealFor": "Startups and businesses launching new products or redesigning existing apps.",
+    "outcomes": [
+      "UX research and user flow mapping",
+      "Wireframes and high-fidelity screens",
+      "Component-based design system",
+      "Developer-ready handoff and specs"
+    ],
+    "timeline": "3-8 weeks",
+    "value": "Increases usability, retention, and product adoption"
+  },
+  {
+    "id": "digital-marketing",
+    "menuTitle": "Digital Marketing",
+    "title": "Digital Marketing",
+    "href": "/services/digitalmarketing",
+    "summary": "Data-driven campaigns that attract qualified traffic and convert it into real revenue.",
+    "idealFor": "Brands that want predictable growth through search, social, and paid channels.",
+    "outcomes": [
+      "SEO and local search optimization",
+      "Social media strategy and creatives",
+      "Performance ad campaigns",
+      "Monthly reporting with action plan"
+    ],
+    "timeline": "3+ months",
+    "value": "Boosts reach, leads, and ROI with measurable KPIs"
+  },
+  {
+    "id": "graphic-design",
+    "menuTitle": "Graphic Design",
+    "title": "Graphic Design",
+    "href": "/services/graphicsDesigning",
+    "summary": "Brand visuals and marketing creatives that make your business instantly recognizable.",
+    "idealFor": "Companies improving brand identity, campaign assets, and communication quality.",
+    "outcomes": [
+      "Brand identity and logo packages",
+      "Social and ad design creatives",
+      "Sales and presentation materials",
+      "Print-ready and digital-ready assets"
+    ],
+    "timeline": "1-4 weeks",
+    "value": "Strengthens brand recall and campaign performance"
+  }
+]
