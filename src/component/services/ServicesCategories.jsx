@@ -1,6 +1,7 @@
 // components/services/ServicesCategories.jsx
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import {
   FaLaptopCode,
   FaMobileAlt,
@@ -20,6 +21,7 @@ const ServicesCategories = () => {
     {
       id: "web-dev",
       title: "Web Development",
+      href: "/services/website",
       icon: <FaLaptopCode className="text-blue-500 text-2xl" />,
       description:
         "Custom websites, web applications, and e-commerce solutions",
@@ -29,6 +31,7 @@ const ServicesCategories = () => {
     {
       id: "app-dev",
       title: "App Development",
+      href: "/services/appdevelopment",
       icon: <FaMobileAlt className="text-green-500 text-2xl" />,
       description: "Native iOS, Android, and cross-platform mobile apps",
       color: "from-green-500 to-green-600",
@@ -37,6 +40,7 @@ const ServicesCategories = () => {
     {
       id: "graphics",
       title: "Graphics Design",
+      href: "/services/graphicsDesigning",
       icon: <FaPalette className="text-purple-500 text-2xl" />,
       description: "Brand identity, UI/UX design, and creative visuals",
       color: "from-purple-500 to-purple-600",
@@ -45,6 +49,7 @@ const ServicesCategories = () => {
     {
       id: "ai-services",
       title: "AI & Automation",
+      href: null,
       icon: <FaRobot className="text-orange-500 text-2xl" />,
       description: "Machine learning, AI solutions, and process automation",
       color: "from-orange-500 to-orange-600",
@@ -53,6 +58,7 @@ const ServicesCategories = () => {
     {
       id: "digital-marketing",
       title: "Digital Marketing",
+      href: "/services/digitalmarketing",
       icon: <FaChartLine className="text-pink-500 text-2xl" />,
       description: "SEO, social media, PPC, and content marketing",
       color: "from-pink-500 to-pink-600",
@@ -61,6 +67,7 @@ const ServicesCategories = () => {
     {
       id: "cloud",
       title: "Cloud Solutions",
+      href: null,
       icon: <FaCloud className="text-cyan-500 text-2xl" />,
       description: "Cloud migration, hosting, and infrastructure management",
       color: "from-cyan-500 to-cyan-600",
@@ -73,7 +80,7 @@ const ServicesCategories = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Our Digital Services
+            Our Core Services
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             End-to-end IT solutions for businesses of all sizes
@@ -106,8 +113,20 @@ const ServicesCategories = () => {
                   {category.title}
                 </h3>
                 <p className="text-gray-600 mb-6">{category.description}</p>
+                {category.href ? (
+                  <Link
+                    href={category.href}
+                    className="inline-flex items-center justify-center rounded-lg bg-gray-800 px-4 py-2 text-sm font-semibold text-white hover:bg-black transition-colors"
+                  >
+                    View Service
+                  </Link>
+                ) : (
+                  <span className="inline-flex items-center justify-center rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-500">
+                    Coming Soon
+                  </span>
+                )}
                 <div
-                  className={`h-2 w-full rounded-full bg-linear-to-r ${category.color}`}
+                  className={`mt-4 h-2 w-full rounded-full bg-linear-to-r ${category.color}`}
                 ></div>
               </div>
             </motion.div>
@@ -133,6 +152,14 @@ const ServicesCategories = () => {
               <p className="text-gray-600">
                 {categories.find((c) => c.id === activeCategory)?.description}
               </p>
+              {categories.find((c) => c.id === activeCategory)?.href && (
+                <Link
+                  href={categories.find((c) => c.id === activeCategory)?.href}
+                  className="mt-2 inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+                >
+                  Go to Service Page
+                </Link>
+              )}
             </div>
           </div>
 
