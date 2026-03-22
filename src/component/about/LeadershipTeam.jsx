@@ -50,6 +50,22 @@ const leadershipData = [
       "Government Skill Development Advisor",
     ],
   },
+    {
+    name: "Manoj Khadka",
+    position: "Managing Director & Developer",
+    image: "/manoj.jpg",
+    bio: "Passionate frontend developer and tech enthusiast with a strong focus on building modern, user-friendly web applications. Currently pursuing a Bachelor's degree in Information Technology (BIT), Manoj combines academic knowledge with practical experience to create efficient and visually appealing digital solutions.",
+    education: "Bachelor's in Information Technology (BIT), Purbanchal University",
+    experience: "20+ years in Education",
+    linkedin: "https://www.linkedin.com/in/manoj-khadka-a1b572367?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "khadkamanoj1001@gmail.com",
+    achievements: [
+      "Built multiple responsive web applications using React and Tailwind CSS",
+    "Completed real-world frontend projects and UI implementations",
+    "Experienced in WordPress customization and API integration",
+    "Continuously learning advanced frontend and modern web technologies"
+    ],
+  },
 ];
 
 const LeadershipTeam = () => {
