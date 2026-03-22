@@ -11,6 +11,7 @@ import {
   FaEnvelope,
   FaClock,
 } from "react-icons/fa";
+import servicesData from "@/lib/servicesData.json";
 
 const Footer = () => {
   const quickLinks = [
@@ -22,12 +23,10 @@ const Footer = () => {
     { name: "Admin", href: "/admin" },
   ];
 
-  const services = [
-    { name: "Web Design", href: "/services/website" },
-    { name: "App Design", href: "/services/appdevelopment" },
-    { name: "Digital Marketing", href: "/services/digitalmarketing" },
-    { name: "Graphic Design", href: "/services/graphicsDesigning" },
-  ];
+  const services = servicesData.map((service) => ({
+    name: service.menuTitle,
+    href: service.href,
+  }));
 
   const industries = [
     { name: "E-commerce", href: "/industries/ecommerce" },
