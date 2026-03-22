@@ -5,6 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaInstagram, FaFacebookF } from "react-icons/fa";
+import { SiTiktok } from "react-icons/si";
+import servicesData from "@/lib/servicesData.json";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,15 +41,37 @@ const Header = () => {
     {
       name: "Services",
       href: "/services",
-      dropdown: [
-        { name: "Web Design", href: "/services/website" },
-        { name: "App Design", href: "/services/appdevelopment" },
-        { name: "Digital Marketing", href: "/services/digitalmarketing" },
-        { name: "Graphic Design", href: "/services/graphicsDesigning" },
-      ],
+      dropdown: servicesData.map((service) => ({
+        name: service.menuTitle,
+        href: service.href,
+      })),
     },
     { name: "About Us", href: "/about" },
     { name: "Connect Us", href: "/connection" },
+  ];
+
+  const mobileSocialLinks = [
+    {
+      name: "Instagram",
+      href: "https://instagram.com/NEXQBYTEbyte",
+      icon: <FaInstagram className="text-base" />,
+      style:
+        "from-pink-500/20 to-orange-400/20 border-pink-300/40 text-pink-600 hover:text-pink-700",
+    },
+    {
+      name: "TikTok",
+      href: "https://www.tiktok.com/@NEXQBYTEbyte",
+      icon: <SiTiktok className="text-base" />,
+      style:
+        "from-slate-900/20 to-cyan-300/20 border-slate-400/40 text-slate-700 hover:text-black",
+    },
+    {
+      name: "Facebook",
+      href: "https://facebook.com/NEXQBYTEbyte",
+      icon: <FaFacebookF className="text-base" />,
+      style:
+        "from-blue-500/20 to-indigo-500/20 border-blue-300/40 text-blue-600 hover:text-blue-700",
+    },
   ];
 
   const handleDropdownHover = (index) => {
@@ -103,13 +128,33 @@ const Header = () => {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-gray-300 text-sm"
+              className="flex items-center gap-4 text-gray-300 text-sm"
             >
-              We Serve:{" "}
-              <span className="text-[#F9A826] font-semibold relative group">
-                Skill, Growth, Experiences
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#F9A826] group-hover:w-full transition-all duration-300"></span>
-              </span>
+              <div>
+                We Serve:{" "}
+                <span className="text-[#F9A826] font-semibold relative group">
+                  Skill, Growth, Experiences
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#F9A826] group-hover:w-full transition-all duration-300"></span>
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                {mobileSocialLinks.map((social) => (
+                  <motion.a
+                    key={`desktop-${social.name}`}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    whileHover={{ y: -2, scale: 1.04 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group relative inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white hover:text-[#F9A826] transition-colors"
+                  >
+                    <span className="relative z-10">{social.icon}</span>
+                    <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  </motion.a>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
@@ -342,12 +387,41 @@ const Header = () => {
 
                 {/* Mobile tagline */}
                 <div className="mt-8 p-4 bg-linear-to-r from-[#F9A826]/10 to-transparent rounded-lg">
-                  <p className="text-sm text-gray-600">
-                    We Serve:{" "}
-                    <span className="text-[#F9A826] font-semibold">
-                      Skill, Growth, Experiences
-                    </span>
-                  </p>
+                  
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35, delay: 0.1 }}
+                    className="mt-4"
+                  >
+                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-3">
+                      Follow Us
+                    </p>
+                    <div className="flex items-center gap-3">
+                      {mobileSocialLinks.map((social, index) => (
+                        <motion.a
+                          key={social.name}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={social.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{
+                            duration: 0.25,
+                            delay: 0.18 + index * 0.08,
+                          }}
+                          whileHover={{ y: -3, scale: 1.06 }}
+                          whileTap={{ scale: 0.92 }}
+                          className={`group relative overflow-hidden inline-flex h-10 w-10 items-center justify-center rounded-full border bg-linear-to-br ${social.style} shadow-sm transition-all duration-300`}
+                        >
+                          <span className="relative z-10">{social.icon}</span>
+                          <span className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-white/40 transition-opacity duration-300"></span>
+                        </motion.a>
+                      ))}
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
