@@ -48,7 +48,8 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Package", href: "/package" },
+    { name: "About Us", href: "/about" },
+    
     {
       name: "Services",
       href: "/services",
@@ -57,9 +58,9 @@ const Header = () => {
         href: service.href,
       })),
     },
+    { name: "Package", href: "/package" },
     { name: "Our Work", href: "/our-work" },
     { name: "Career", href: "/career" },
-    { name: "About Us", href: "/about" },
     { name: "Connect Us", href: "/connection" },
   ];
 
