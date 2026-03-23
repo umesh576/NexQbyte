@@ -12,7 +12,7 @@ const FAQSection = () => {
     {
       question: "Do you offer maintenance after project completion?",
       answer:
-        "Yes, we offer monthly maintenance packages starting at $299/month that include updates, security, backups, and 24/7 support.",
+        "Yes, we offer monthly maintenance packages starting at Rs 25k - 30k/month that include updates, security, backups, and 24/7 support.",
     },
     {
       question: "Can I make changes after the project starts?",
