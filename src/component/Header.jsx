@@ -57,6 +57,8 @@ const Header = () => {
         href: service.href,
       })),
     },
+    { name: "Our Work", href: "/our-work" },
+    { name: "Career", href: "/career" },
     { name: "About Us", href: "/about" },
     { name: "Connect Us", href: "/connection" },
   ];
