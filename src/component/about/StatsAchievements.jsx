@@ -3,18 +3,18 @@
 import { useState, useEffect } from "react";
 import { FaTrophy, FaAward, FaStar, FaRibbon } from "react-icons/fa";
 
+const STAT_TARGETS = {
+  professionals: 3200,
+  companies: 200,
+  projects: 500,
+  countries: 3,
+};
+
 const StatsAchievements = () => {
   const [professionals, setProfessionals] = useState(0);
   const [companies, setCompanies] = useState(0);
   const [projects, setProjects] = useState(0);
   const [countries, setCountries] = useState(0);
-
-  const statTargets = {
-    professionals: 3200,
-    companies: 200,
-    projects: 500,
-    countries: 3,
-  };
 
   useEffect(() => {
     const animateCount = (setter, target, duration = 2000) => {
@@ -33,10 +33,10 @@ const StatsAchievements = () => {
     };
 
     const timers = [
-      animateCount(setProfessionals, statTargets.professionals, 2500),
-      animateCount(setCompanies, statTargets.companies, 2000),
-      animateCount(setProjects, statTargets.projects, 3000),
-      animateCount(setCountries, statTargets.countries, 1500),
+      animateCount(setProfessionals, STAT_TARGETS.professionals, 2500),
+      animateCount(setCompanies, STAT_TARGETS.companies, 2000),
+      animateCount(setProjects, STAT_TARGETS.projects, 3000),
+      animateCount(setCountries, STAT_TARGETS.countries, 1500),
     ];
 
     return () => timers.forEach((timer) => clearInterval(timer));
