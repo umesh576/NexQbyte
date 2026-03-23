@@ -180,7 +180,7 @@ const ServicesCategories = () => {
                   <div className="text-2xl mb-2">🌐</div>
                   <div className="font-medium text-gray-800">{item}</div>
                   <div className="text-xs text-blue-600 mt-1">
-                    Starting at $500
+                    Starting at Rs 70,000
                   </div>
                 </div>
               ))}
@@ -201,7 +201,7 @@ const ServicesCategories = () => {
                   <div className="text-2xl mb-2">📱</div>
                   <div className="font-medium text-gray-800">{item}</div>
                   <div className="text-xs text-green-600 mt-1">
-                    Starting at $1000
+                    Starting at RS 100,000
                   </div>
                 </div>
               ))}
@@ -222,7 +222,7 @@ const ServicesCategories = () => {
                   <div className="text-2xl mb-2">🎨</div>
                   <div className="font-medium text-gray-800">{item}</div>
                   <div className="text-xs text-purple-600 mt-1">
-                    Starting at $200
+                    Starting at Rs 15,000
                   </div>
                 </div>
               ))}
@@ -264,7 +264,7 @@ const ServicesCategories = () => {
                   <div className="text-2xl mb-2">📈</div>
                   <div className="font-medium text-gray-800">{item}</div>
                   <div className="text-xs text-pink-600 mt-1">
-                    Starting at $300/mo
+                    Starting at Rs 30000 /month
                   </div>
                 </div>
               ))}
