@@ -265,14 +265,15 @@ const Header = () => {
 
           {/* Apply Now button */}
           <div className="flex items-center gap-3">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden lg:inline-flex relative overflow-hidden group bg-linear-to-r from-[#F9A826] to-[#e09616] text-[#1B1F3B] text-sm font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              <span className="relative cursor-pointer z-10">Apply Now</span>
-              <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-            </motion.button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/application"
+                className="hidden lg:inline-flex relative overflow-hidden group bg-linear-to-r from-[#F9A826] to-[#e09616] text-[#1B1F3B] text-sm font-bold py-2.5 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <span className="relative cursor-pointer z-10">Apply Now</span>
+                <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+              </Link>
+            </motion.div>
 
             {/* Mobile menu button */}
             <motion.button
