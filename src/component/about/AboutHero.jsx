@@ -18,7 +18,7 @@ const AboutHero = () => {
           <div className="text-white">
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
               <span className="w-2 h-2 bg-blue-300 rounded-full mr-2 animate-pulse"></span>
-              <span className="text-sm font-semibold">Since 2018</span>
+              <span className="text-sm font-semibold">Since 2024</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
