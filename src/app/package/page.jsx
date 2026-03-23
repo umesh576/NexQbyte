@@ -81,7 +81,7 @@ const Page = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="grow px-6 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="grow px-6 py-3 rounded-full border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
               Get Custom Quote
