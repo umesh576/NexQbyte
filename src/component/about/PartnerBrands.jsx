@@ -74,7 +74,7 @@ const PartnerBrands = () => {
           <p className="text-gray-600 mb-4">
             NexQbyte Solution is a premier technology company based in Nepal,
             dedicated to delivering cutting-edge digital solutions for
-            businesses worldwide. Founded in 2018, we have rapidly grown to
+            businesses worldwide. Founded in 2024, we have rapidly grown to
             become one of the most trusted names in custom software development,
             mobile applications, and AI-powered digital transformation.
           </p>
