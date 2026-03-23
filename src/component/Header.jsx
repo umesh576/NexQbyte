@@ -192,6 +192,7 @@ const Header = () => {
                 src="/logo.jpeg"
                 alt="NexQbyte Logo"
                 fill
+                sizes="(max-width: 640px) 160px, 176px"
                 className="object-contain"
                 priority
               />
@@ -340,6 +341,7 @@ const Header = () => {
                       src="/logo.jpeg"
                       alt="NexQbyte Logo"
                       fill
+                      sizes="128px"
                       className="object-contain"
                     />
                   </div>
