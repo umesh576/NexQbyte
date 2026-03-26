@@ -100,8 +100,8 @@ const Page = () => {
       <div className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-lg">
-            All prices are in USD. Payment plans available for projects over
-            $2,000.
+            All prices are in nepali rupees. Payment plans available for projects over
+            Rs. 35,000.
           </p>
           <p className="text-gray-400 mt-2">
             Prices may vary based on project complexity and specific
