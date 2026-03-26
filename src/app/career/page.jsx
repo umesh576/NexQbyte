@@ -119,20 +119,20 @@ const hiringSteps = [
 
 export default function CareerPage() {
   return (
-    <main className="min-h-screen bg-linear-to-b from-[#f7f9ff] via-[#fef9ef] to-[#f5f9f7] text-[#1B1F3B]">
-      <section className="relative overflow-hidden border-b border-[#1B1F3B]/10">
-        <div className="pointer-events-none absolute -top-20 -left-20 h-72 w-72 rounded-full bg-[#5aba70]/20 blur-3xl" />
-        <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#F9A826]/20 blur-3xl" />
+    <main className="min-h-screen bg-[#fff] text-[#1B1F3B]">
+      <section className="relative overflow-hidden bg-linear-to-br from-[#0a2463] via-[#1e3a8a] to-[#3b82f6] border-b  border-[#1B1F3B]/10 text-[#fff]">
+        <div className="pointer-events-none absolute -top-20 -left-20 h-72 w-72 rounded-full blur-3xl" />
+        <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full  blur-3xl" />
 
         <div className="container mx-auto px-4 py-20 md:py-24 relative">
-          <p className="inline-flex rounded-full border border-[#F9A826]/40 bg-[#F9A826]/10 px-4 py-2 text-sm font-semibold text-[#1B1F3B]">
+          <p className="inline-flex rounded-full border border-[#F9A826]/40 bg-[#F9A826]/10 px-4 py-2 text-sm font-semibold">
             Career At NexQbyte
           </p>
           <h1 className="mt-6 max-w-4xl text-4xl md:text-6xl font-bold leading-tight">
             Build Meaningful Digital Products With a Team That
             <span className="text-[#F9A826]"> Invests In Your Growth</span>
           </h1>
-          <p className="mt-6 max-w-3xl text-lg text-[#4e556f]">
+          <p className="mt-6 max-w-3xl text-lg ">
             We are building modern web, app, and growth solutions for ambitious
             businesses. Join us to work on real projects, sharpen your craft,
             and create measurable impact from day one.
@@ -147,23 +147,23 @@ export default function CareerPage() {
             </Link>
             <Link
               href="/our-work"
-              className="inline-flex items-center gap-2 rounded-full border border-[#1B1F3B]/30 px-6 py-3 text-sm font-semibold text-[#1B1F3B] hover:bg-[#1B1F3B] hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-[#fff]/30 px-6 py-3 text-sm font-semibold text-[#fff] hover:bg-[#fff] hover:text-[#1B1F3B] transition-colors"
             >
               See Our Work
             </Link>
           </div>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl">
-            <div className="rounded-xl border border-[#1B1F3B]/10 bg-white/80 p-4">
-              <p className="text-sm text-[#5b637d]">Active Roles</p>
+            <div className="rounded-xl border border-[#fff]  p-4">
+              <p className="text-sm text-[#fff]">Active Roles</p>
               <p className="mt-1 text-2xl font-bold">08+</p>
             </div>
-            <div className="rounded-xl border border-[#1B1F3B]/10 bg-white/80 p-4">
-              <p className="text-sm text-[#5b637d]">Avg Hiring Time</p>
+            <div className="rounded-xl border border-[#fff] p-4">
+              <p className="text-sm text-[#fff]">Avg Hiring Time</p>
               <p className="mt-1 text-2xl font-bold">10 Days</p>
             </div>
-            <div className="rounded-xl border border-[#1B1F3B]/10 bg-white/80 p-4">
-              <p className="text-sm text-[#5b637d]">Annual Learning Budget</p>
+            <div className="rounded-xl border border-[#fff] p-4">
+              <p className="text-sm text-[#fff]">Annual Learning Budget</p>
               <p className="mt-1 text-2xl font-bold">NPR 30K</p>
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function CareerPage() {
               key={item.title}
               className="rounded-2xl border border-[#1B1F3B]/10 bg-white/80 p-6 hover:border-[#F9A826]/40 transition-all duration-300"
             >
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#F9A826]/10">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl ">
                 {item.icon}
               </div>
               <h3 className="text-xl font-semibold">{item.title}</h3>
