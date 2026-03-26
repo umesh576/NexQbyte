@@ -106,7 +106,7 @@ const StatsAchievements = () => {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
-          <p className="inline-flex rounded-full border border-[#F9A826]/40 bg-[#F9A826]/10 px-4 py-2 text-xs font-semibold tracking-wide text-[#1B1F3B]">
+          <p className="inline-flex rounded-full border border-[#F9A826]/40 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-[#1B1F3B]">
             Impact Snapshot
           </p>
           <h2 className="mt-5 text-3xl font-bold text-[#1B1F3B] md:text-4xl">
