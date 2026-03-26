@@ -240,7 +240,7 @@ const Header = () => {
                             <Link
                               key={dropItem.name}
                               href={dropItem.href}
-                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-[#F9A826]/10 hover:text-[#F9A826] transition-colors border-b border-gray-50 last:border-0"
+                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-white hover:text-[#F9A826] transition-colors border-b border-gray-50 last:border-0"
                               onClick={closeMenu}
                             >
                               {dropItem.name}
@@ -279,7 +279,7 @@ const Header = () => {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={toggleMenu}
-              className="lg:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-lg bg-[#F9A826]/10 text-[#1B1F3B] hover:bg-[#F9A826] hover:text-white transition-all duration-300"
+              className="lg:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-lg bg-white text-[#1B1F3B] hover:bg-[#F9A826] hover:text-white transition-all duration-300"
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait">
