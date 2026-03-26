@@ -110,9 +110,9 @@ export default function OurWorkPage() {
   return (
     <main className="min-h-screen bg-linear-to-b from-[#f7f9ff] via-[#fef9ef] to-[#f5f9f7] text-[#1B1F3B]">
       <section className="relative overflow-hidden border-b border-[#1B1F3B]/10">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,168,38,0.18),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(90,186,112,0.16),transparent_30%)]" />
+        <div className="pointer-events-none absolute " />
         <div className="container mx-auto px-4 py-20 md:py-24 relative">
-          <p className="inline-flex rounded-full border border-[#F9A826]/35 bg-[#F9A826]/10 px-4 py-2 text-sm font-semibold text-[#1B1F3B]">
+          <p className="inline-flex rounded-full border border-[#F9A826]/35 bg-white px-4 py-2 text-sm font-semibold text-[#1B1F3B]">
             Our Work
           </p>
           <h1 className="mt-6 max-w-4xl text-4xl md:text-6xl font-bold leading-tight">
@@ -168,7 +168,7 @@ export default function OurWorkPage() {
               className="rounded-2xl border border-[#1B1F3B]/10 bg-white/85 p-6 hover:border-[#F9A826]/40 transition-all duration-300"
             >
               <div className="flex items-center justify-between gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#F9A826]/10">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white">
                   {item.icon}
                 </span>
                 <span className="rounded-full border border-[#1B1F3B]/15 bg-[#f8f9fd] px-3 py-1 text-xs text-[#4e556f]">
@@ -190,7 +190,7 @@ export default function OurWorkPage() {
                 ))}
               </div>
 
-              <div className="mt-5 rounded-xl border border-[#F9A826]/30 bg-[#F9A826]/10 p-3 text-sm text-[#4e556f]">
+              <div className="mt-5 rounded-xl border border-[#F9A826]/30 bg-white p-3 text-sm text-[#4e556f]">
                 <span className="font-semibold text-[#1B1F3B]">Result:</span> {item.result}
               </div>
             </article>
